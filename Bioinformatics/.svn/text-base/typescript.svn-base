@@ -1,196 +1,0 @@
-Script started on Tue 14 Jun 2011 11:19:04 AM CDT
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[?1034h[wk@localhost Bioinformatics]$ man script
-[?1049h[?1h=SCRIPT(1)                 BSD General Commands Manual                SCRIPT(1)[m
-[m
-[1mNAME[0m[m
-     [1mscript[0m — make typescript of terminal session[m
-[m
-[1mSYNOPSIS[0m[m
-     [1mscript[0m [[1m-a[0m] [[1m-c[0m [4mCOMMAND[24m] [[1m-e[0m] [[1m-f[0m] [[1m-q[0m] [[1m-t[0m] [[4mfile[24m][m
-[m
-[1mDESCRIPTION[0m[m
-     [1mScript[0m makes a typescript of everything printed on your terminal.  It is[m
-     useful for students who need a hardcopy record of an interactive session[m
-     as proof of an assignment, as the typescript file can be printed out[m
-     later with lpr(1).[m
-[m
-     If the argument [4mfile[24m is given, [1mscript[0m saves all dialogue in [4mfile[24m.  If no[m
-     file name is given, the typescript is saved in the file [4mtypescript[24m.[m
-[m
-     Options:[m
-[m
-     [1m-a[0m      Append the output to [4mfile[24m or [4mtypescript[24m, retaining the prior con‐[m
-             tents.[m
-[m
-     [1m-c[0m [4mCOMMAND[24m[m
-[7m Manual page script(1) line 1[27m[K[K [KESCESC[KOO[KBB[K             Run the COMMAND rather than an interactive shell.  This makes it[m
-[7m Manual page script(1) line 2[27m[K[K [KESCESC[KOO[KBB[K             easy for a script to capture the output of a program that behaves[m
-[7m Manual page script(1) line 3[27m[K[K [KESCESC[KOO[KBB[K             differently when its stdout is not a tty.[m
-[7m Manual page script(1) line 4[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 5[27m[K[K [KESCESC[KOO[KBB[K     [1m-e[0m      Return the exit code of the child process. Uses the same format[m
-[7m Manual page script(1) line 6[27m[K[K [KESCESC[KOO[KBB[K             as bash termination on signal termination exit code is 128+n.[m
-[7m Manual page script(1) line 7[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 8[27m[K[K [KESCESC[KOO[KBB[K     [1m-f[0m      Flush output after each write. This is nice for telecooperation:[m
-[7m Manual page script(1) line 9[27m[K[K [KESCESC[KOO[KBB[K             One person does `mkfifo foo; script -f foo' and another can[m
-[7m Manual page script(1) line 10[27m[K[K [KESCESC[KOO[KBB[K             supervise real-time what is being done using `cat foo'.[m
-[7m Manual page script(1) line 11[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 12[27m[K[K [KESCESC[KOO[KBB[K     [1m-q[0m      Be quiet.[m
-[7m Manual page script(1) line 13[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 14[27m[K[K [KESCESC[KOO[KBB[K     [1m-t[0m      Output timing data to standard error. This data contains two[m
-[7m Manual page script(1) line 15[27m[K[K [KESCESC[KOO[KBB[K             fields, separated by a space. The first field indicates how much[m
-[7m Manual page script(1) line 16[27m[K[K [KESCESC[KOO[KBB[K             time elapsed since the previous output. The second field indi‐[m
-[7m Manual page script(1) line 17[27m[K[K [KESCESC[KOO[KBB[K             cates how many characters were output this time. This information[m
-[7m Manual page script(1) line 18[27m[K[K [KESCESC[KOO[KBB[K             can be used to replay typescripts with realistic typing and out‐[m
-[7m Manual page script(1) line 19[27m[K[K [KESCESC[KOO[KBB[K             put delays.[m
-[7m Manual page script(1) line 20[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 21[27m[K[K [KESCESC[KOO[KBB[K     The script ends when the forked shell exits (a [4mcontrol-D[24m to exit the[m
-[7m Manual page script(1) line 22[27m[K[K [KESCESC[KOO[KBB[K     Bourne shell (sh(1)), and [4mexit[24m, [4mlogout[24m or [4mcontrol-d[24m (if [4mignoreeof[24m is not[m
-[7m Manual page script(1) line 23[27m[K[K [KESCESC[KOO[KBB[K     set) for the C-shell, csh(1)).[m
-[7m Manual page script(1) line 24[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 25[27m[K[K [KESCESC[KOO[KBB[K     Certain interactive commands, such as vi(1), create garbage in the type‐[m
-[7m Manual page script(1) line 26[27m[K[K [KESCESC[KOO[KBB[K     script file.  [1mScript[0m works best with commands that do not manipulate the[m
-[7m Manual page script(1) line 27[27m[K[K [KESCESC[KOO[KBB[K     screen, the results are meant to emulate a hardcopy terminal.[m
-[7m Manual page script(1) line 28[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 29[27m[K[K [KESCESC[KOO[KBB[K[1mENVIRONMENT[0m[m
-[7m Manual page script(1) line 30[27m[K[K [KESCESC[KOO[KBB[K     The following environment variable is utilized by [1mscript[0m:[m
-[7m Manual page script(1) line 31[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page script(1) line 32[27m[K[K[?1l>[?1049l]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ man script[2Ptimeless suffix_low2.in [16@./random-string.py >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[K./random-string.py > suffix_low2.in [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kman timesdiff suffix_low_sa.out suffix_low_st.out [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctime ./suffixarray < suffix_low.in > suffix_low_saa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C- ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CU  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CS  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-bash: -f: command not found...
-^C
-
-real	0m2.079s
-user	0m0.000s
-sys	0m0.002s
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ time -f USP  ./suffixarray < suffix_low.in > suffiix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-f USP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co USP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr USP  ./suffixarray < suffix_low.in > su[Cfix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm USP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca USP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct USP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CUSP  ./suffixarray < suffix_low.in > [1Psuffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=USP  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-bash: --format=USP: command not found...
-
-real	0m2.012s
-user	0m0.009s
-sys	0m0.008s
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ time --format=USP  ./suffixarray < suffix_low.in >> suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"USP"  ./suffixarray < suffix_low.in[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,SP"  ./suffixarray < suffix_low.i[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,P"  ./suffixarray < suffix_low.[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-bash: --format=U,S,P: command not found...
-
-real	0m1.254s
-user	0m0.008s
-sys	0m0.011s
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ time --format="U,S,P"  ./suffixarray < suffix_low..in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Cformat="U,S,P"  ./suffixarray < suffix_low.i[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cformat="U,S,P"  ./suffixarray < suffix_low.in[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cormat="U,S,P"  ./suffixarray < suffix_low.in [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crmat="U,S,P"  ./suffixarray < suffix_low.in >[1P suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmat="U,S,P"  ./suffixarray < suffix_low.in > [1Psuffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cat="U,S,P"  ./suffixarray < suffix_low.in > s[1Puffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct="U,S,P"  ./suffixarray < suffix_low.in > su[1Pffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C="U,S,P"  ./suffixarray < suffix_low.in > suf[C[1Pix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"U,S,P"  ./suffixarray < suffix_low.in > suff[1Pix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-"U,S,P"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf"U,S,P"  ./suffixarray < suffix_low.in > su[Cfix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "U,S,P"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-bash: -f: command not found...
-
-real	0m0.573s
-user	0m0.007s
-sys	0m0.007s
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ time -f "U,S,P"  ./suffixarray < suffix_low.in > ssuffix_low_sa.out"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"./suffixarray < suffix_low.in > suffix_low_sa.out"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-bash: -f: command not found...
-
-real	0m0.533s
-user	0m0.004s
-sys	0m0.012s
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ time -f "U,S,P"  "./suffixarray < suffix_low.in >  suffix_low_sa.out"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./suffixarray < suffix_low.in > s[2Puffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-format="U,S,P"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf "U,S,P"  ./suffixarray < suffix_low.in > s[6Puffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C/time -f "U,S,P"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Cutime -f "U,S,P"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstime -f "U,S,P"  ./suffixarray < suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Crtime -f "U,S,P"  ./suffixarray < suffix_low.in[1@ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/time -f "U,S,P"  ./suffixarray < suffix_low.i[1@n[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbtime -f "U,S,P"  ./suffixarray < suffix_low.[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Citime -f "U,S,P"  ./suffixarray < suffix_low[1@.[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cntime -f "U,S,P"  ./suffixarray < suffix_lo[1@w[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/time -f "U,S,P"  ./suffixarray < suffix_l[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-U,S,P
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "U,S,P"  ./suffixarray < suffix_llow.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./suffixarray < suffix_lo[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-U,S,P
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "U,S,P" ./suffixarray < suffix_loow.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%U,S,P" ./suffixarray < suffix_l[1@o[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%S,P" ./suffixarray < suffix_[1@l[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%P" ./suffixarray < suffix[1@_[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-0.03,0.00,95%
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U,%S,%P" ./suffixarray < suffixx_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C," ./suffixarray < suffi[1@x[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%" ./suffixarray < suff[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce" ./suffixarray < suf[1@f[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C," ./suffixarray < su[C[1@f[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%" ./suffixarray < s[1@u[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM" ./suffixarray < [1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-0.03,0.00,92%,0.03,396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U,%S,%P,%e,%M" ./suffixarray <  suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C" ./suffixarray < s[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CK" ./suffixarray < [1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-0.03,0.00,93%,0.04,0
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U,%S,%P,%e,%K" ./suffixarray <  suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM
-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-0.03,0.00,95%,0.04,396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U,%S,%P,%e,%M" ./suffixarray <  suffix_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,%P,%e,%M" ./suffixarray < s[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,%P,%e,%M" ./suffixarray < su[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%P,%e,%M" ./suffixarray < suf[C[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CP,%e,%M" ./suffixarray < suff[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,%e,%M" ./suffixarray < suffi[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%e,%M" ./suffixarray < suffix[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-0.03,0.03,396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U,%e,%M" ./suffixarray < suffixx_low.in > suffix_low_sa.out[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%e,%M" ./suffixarray < suffix_[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\%e,%M" ./suffixarray < suffix[1@_[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn%e,%M" ./suffixarray < suffi[1@x[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C%M" ./suffixarray < suffix[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\%M" ./suffixarray < suffi[1@x[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn%M" ./suffixarray < suff[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-0.03
-0.03
-396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U\n%e\n%M" ./suffixarray < sufffix_low.in > suffix_low_sa.out 5
-0.03
-0.03
-396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U\n%e\n%M" ./suffixarray < sufffix_low.in > suffix_low_sa.out 5??5?
-0.03
-0.03
-400
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U\n%e\n%M" ./suffixarray < sufffix_low.in > suffix_low_sa.out ?5?
-0.04
-0.04
-396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U\n%e\n%M" ./suffixarray < sufffix_low.in > suffix_low_sa.out ?5?" ?5?[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"./suffixarray < suf[1@f[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-
-/usr/bin/time: cannot run ./suffixarray < suffix_low.in > suffix_low_sa.out: No such file or directory
-0.00
-0.00
-204
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U\n%e\n%M" "./suffixarray < sufffix_low.in > suffix_low_sa.out" ?5?[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./suffixarray < suff[2Pix_low.in > suffix_low_sa.out[C[C[C[C
-0.04
-0.04
-396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ /usr/bin/time -f "%U\n%e\n%M" ./suffixarray < sufffix_low.in > suffix_low_sa.out ?5?[K[K[K[K
-0.03
-0.03
-396
-]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ [K[wk@localhost Bioinformatics]$ man time
-[?1049h[?1h=time(n)                      Tcl Built-In Commands                     time(n)[m
-[m
-______________________________________________________________________________[m
-[m
-[1mNAME[0m[m
-       time - Time the execution of a script[m
-[m
-[1mSYNOPSIS[0m[m
-       [1mtime[0m [4mscript[24m ?[4mcount[24m?[m
-_________________________________________________________________[m
-[m
-[1mDESCRIPTION[0m[m
-       This  command  will  call  the  Tcl interpreter [4mcount[24m times to evaluate[m
-       [4mscript[24m (or once if [4mcount[24m is not specified).   It  will  then  return  a[m
-       string of the form[m
-              [1m503[0m [1mmicroseconds[0m [1mper[0m [1miteration[0m[m
-       which  indicates  the average amount of time required per iteration, in[m
-       microseconds.  Time is measured in elapsed time, not CPU time.[m
-[m
-[1mEXAMPLE[0m[m
-       Estimate how long it takes for a simple Tcl [1mfor[0m  loop  to  count  to  a[m
-       thousand:[m
-[7m Manual page time(n) line 1[27m[K[K [KESCESC[KOO[KBB[K              time {[m
-[7m Manual page time(n) line 2[27m[K[K [KESCESC[KOO[KBB[K                  for {set i 0} {$i<1000} {incr i} {[m
-[7m Manual page time(n) line 5[27m[K[K [KESCESC[KOO[KBB[K                      # empty body[m
-[7m Manual page time(n) line 6[27m[K[K [KESCESC[KOO[KBB[K                  }[m
-[7m Manual page time(n) line 7[27m[K[K [KESCESC[KOO[KBB[K              }[m
-[7m Manual page time(n) line 8[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page time(n) line 9[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
-[7m Manual page time(n) line 10[27m[K[K [KESCESC[KOO[KBB[K       clock(n)[m
-[7m Manual page time(n) line 11[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page time(n) line 12[27m[K[K [KESCESC[KOO[KBB[K[1mKEYWORDS[0m[m
-[7m Manual page time(n) line 13[27m[K[K [KESCESC[KOO[KBB[K       script, time[m
-[7m Manual page time(n) line 15[27m[K[K [KESCESC[KOO[KBB[K[m
-[7m Manual page time(n) line 16[27m[K[K [KESCESC[KOO[KBB[KTcl                                                                    time(n)[m
-[7m Manual page time(n) line 17[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page time(n) line 17/42 (END)[27m[K[K [KESCESC[KOO[KAA[K[HM       This  command  will  call  the  Tcl interpreter [4mcount[24m times to evaluate[m
-[23;1H[K[7m Manual page time(n) line 16/42 93%[27m[K[K [KESCESC[KOO[KAA[K[HM[1mDESCRIPTION[0m[m
-[23;1H[K[7m Manual page time(n) line 15/42 93%[27m[K[K [KESCESC[KOO[KAA[K[HM[m
-[23;1H[K[7m Manual page time(n) line 14/42 92%[27m[K[K [KESCESC[KOO[KAA[K[HM_________________________________________________________________[m
-[23;1H[K[7m Manual page time(n) line 12/42 90%[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtime[0m [4mscript[24m ?[4mcount[24m?[m
-[23;1H[K[7m Manual page time(n) line 11/42 90%[27m[K[K [KESCESC[KOO[KAA[K[HM[1mSYNOPSIS[0m[m
-[23;1H[K[7m Manual page time(n) line 10/42 88%[27m[K[K [KESCESC[KOO[KAA[K[HM[m
-[23;1H[K[7m Manual page time(n) line 9/42 87%[27m[K[K [KESCESC[KOO[KAA[K[HM       time - Time the execution of a script[m
-[23;1H[K[7m Manual page time(n) line 8/42 87%[27m[K[K [KESCESC[KOO[KAA[K[HM[1mNAME[0m[m
-[23;1H[K[7m Manual page time(n) line 7/42 85%[27m[K[K [KESCESC[KOO[KAA[K[HM[m
-[23;1H[K[7m Manual page time(n) line 6/42 84%[27m[K[K [KESCESC[KOO[KAA[K[HM______________________________________________________________________________[m
-[23;1H[K[7m Manual page time(n) line 5/42 81%[27m[K[K [KESCESC[KOO[KAA[K[HM[m
-[23;1H[K[7m Manual page time(n) line 4/42 77%[27m[K[K [KESCESC[KOO[KAA[K[HMtime(n)                      Tcl Built-In Commands                     time(n)[m
-[23;1H[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page time(n) line 1/42 75%[27m[K[K[?1l>[?1049l]0;wk@localhost:~/programming/cinvestav/Bioinformatics[wk@localhost Bioinformatics]$ exit
-
-Script done on Tue 14 Jun 2011 11:59:09 AM CDT

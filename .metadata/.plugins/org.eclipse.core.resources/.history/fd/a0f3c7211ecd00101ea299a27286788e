@@ -1,0 +1,72 @@
+/*
+ * CompactDifferentialEvolution.cpp
+ *
+ *  Created on: Aug 22, 2011
+ *      Author: Moises Osorio
+ */
+
+#include "compactdifferentialevolution.h"
+#include "rand.h"
+#include "benchmark.h"
+
+CompactDifferentialEvolution::CompactDifferentialEvolution() {
+
+}
+
+CompactDifferentialEvolution::~CompactDifferentialEvolution() {
+
+}
+
+void generateX(double *x, double *u, double *d, int n) {
+	for (int i = 0; i < n; i++)
+		x[i] = N(u[i], d[i]);
+}
+
+double CompactDifferentialEvolution::solve(double *xs, int n, int maxEvaluations, double CR, 
+				double F, double randomSeed, double (*bounds)[2], double (*function)(double *x)) {
+	double u[n];
+	double d[n];
+	double elite[n];
+	double xr[n];
+	double xs[n];
+	double xt[n];
+	double xoff[n];
+	
+	for (int i = 0; i < n; i++) { // PV initialization
+		u[i] = 0;
+		d[i] = 10;
+	}
+	
+	generateX(elitex, u, d, n);
+	double felite = function(elitex);
+	int t = 0;
+	while (benchmarkGetEvaluations() < maxEvaluations) {
+		// Mutation
+		generateX(xr, u, d, n);
+		generateX(xs, u, d, n);
+		generateX(xt, u, d, n);
+		for (int i = 0; i < n; i++)
+			xoff[i] = xt[i] + F*(xr[i] - xs[i]);
+		
+		// Crossover
+		for (int i = 0; i < n; i++)
+			if (randreal() > CR)
+				xoff[i] = elite[i];
+		
+		// Elite selection
+		double fxoff = function(xoff);
+		double *winner = elitex;
+		double *loser = xoff;
+		if (fxoff < felite) {
+			winner = xoff;
+			loser = elitex;
+			for (int i = 0; i < n; i++)
+				elite[i] = xoff[i];
+		}
+		
+		// PV update
+		
+		
+		t++;
+	}
+}

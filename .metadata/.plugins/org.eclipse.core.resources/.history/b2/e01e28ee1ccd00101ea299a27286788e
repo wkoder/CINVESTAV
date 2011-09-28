@@ -1,0 +1,36 @@
+/*
+ * CompactDifferentialEvolution.cpp
+ *
+ *  Created on: Aug 22, 2011
+ *      Author: Moises Osorio
+ */
+
+#include "compactdifferentialevolution.h"
+#include "rand.h"
+
+CompactDifferentialEvolution::CompactDifferentialEvolution() {
+
+}
+
+CompactDifferentialEvolution::~CompactDifferentialEvolution() {
+
+}
+
+void generateX(double *x, double *u, double *d, int n) {
+	for (int i = 0; i < n; i++)
+		x[i] = N(u[i], d[i]);
+}
+
+double CompactDifferentialEvolution::solve(double *xs, int n, int maxEvaluations, double CR, 
+				double F, double randomSeed, double (*bounds)[2], double (*F)(double *x)) {
+	double u[n];
+	double d[n];
+	double elite[n];
+	for (int i = 0; i < n; i++) { // PV initialization
+		u[i] = 0;
+		d[i] = 10;
+	}
+	
+	generateX(elitex, u, d, n);
+	while ()
+}

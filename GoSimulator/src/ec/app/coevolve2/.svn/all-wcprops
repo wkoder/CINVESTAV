@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2
+END
+ecsuite.params
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/ecsuite.params
+END
+CoevolutionaryECSuite.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/CoevolutionaryECSuite.java
+END
+coevolve2.params
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/coevolve2.params
+END
+CoevolutionaryECSuite.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/CoevolutionaryECSuite.class
+END
+CoevolutionaryDoubleVectorIndividual.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/CoevolutionaryDoubleVectorIndividual.java
+END
+CoevolutionaryRosenbrock.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/CoevolutionaryRosenbrock.java
+END
+CoevolutionaryDoubleVectorIndividual.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/CoevolutionaryDoubleVectorIndividual.class
+END
+CoevolutionaryRosenbrock.class
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/coevolve2/CoevolutionaryRosenbrock.class
+END

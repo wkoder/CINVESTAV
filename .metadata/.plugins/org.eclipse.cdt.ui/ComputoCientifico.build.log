@@ -1,0 +1,13 @@
+
+**** Build of configuration Default for project ComputoCientifico ****
+
+make all 
+rm -f *.o mainao
+g++ -O3 -g -Wall -fmessage-length=0 -c mainao.c
+g++ -O3 -g -Wall -fmessage-length=0 -c lu.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c matrix.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c gram_schmidt.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c simplecenterdiff.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c problem.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c givens.c 
+g++ -O3 -g -Wall -fmessage-length=0 -o mainao mainao.o lu.o matrix.o gram_schmidt.o simplecenterdiff.o problem.o givens.o 

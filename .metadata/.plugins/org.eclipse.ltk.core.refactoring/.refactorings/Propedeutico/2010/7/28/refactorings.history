@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Propedeutico/aproximapi&apos; to &apos;aproximapi.pl&apos;" description="Rename resource &apos;aproximapi&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="aproximapi" name="aproximapi.pl" stamp="1278551374910" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;arithmetic_lib64/airthlib64.c&apos; to &apos;arithlib64.c&apos;" description="Rename resource &apos;airthlib64.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="airthlib64.c" name="arithlib64.c" stamp="1289116457917" updateReferences="true"/>
+</session>

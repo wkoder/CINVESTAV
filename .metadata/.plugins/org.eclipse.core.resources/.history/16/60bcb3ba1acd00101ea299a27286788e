@@ -1,0 +1,17 @@
+/*
+ * CompactDifferentialEvolution.cpp
+ *
+ *  Created on: Aug 22, 2011
+ *      Author: Moises Osorio
+ */
+
+#include "compactdifferentialevolution.h"
+
+CompactDifferentialEvolution::CompactDifferentialEvolution() {
+	// TODO Auto-generated constructor stub
+
+}
+
+CompactDifferentialEvolution::~CompactDifferentialEvolution() {
+	// TODO Auto-generated destructor stub
+}

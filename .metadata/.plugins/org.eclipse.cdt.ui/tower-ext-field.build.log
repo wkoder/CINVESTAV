@@ -1,0 +1,14 @@
+
+**** Build of configuration Debug for project tower-ext-field ****
+
+make all 
+Building file: ../test.c
+Invoking: GCC C Compiler
+gcc -O3 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test.d" -MT"test.d" -o"test.o" "../test.c"
+Finished building: ../test.c
+ 
+Building target: tower-ext-field
+Invoking: GCC C Linker
+gcc -lgmp -o"tower-ext-field"  ./test.o ./towerextfield.o   
+Finished building target: tower-ext-field
+ 

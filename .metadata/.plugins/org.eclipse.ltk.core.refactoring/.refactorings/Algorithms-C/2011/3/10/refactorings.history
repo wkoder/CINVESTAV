@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Algorithms-C/src/Algorithms-C.c&apos; to &apos;heapsort.c&apos;" description="Rename resource &apos;Algorithms-C.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Algorithms-C.c" name="heapsort.c" stamp="1299248622619" updateReferences="true"/>
+</session>

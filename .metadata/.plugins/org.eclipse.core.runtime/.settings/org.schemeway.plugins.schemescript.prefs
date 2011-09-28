@@ -1,0 +1,12 @@
+#Wed Sep 22 23:47:32 CDT 2010
+org.schemeway.plugins.schemescript.syntax.keywords=\#\!optional|\#\!rest|\#\!key|
+org.schemeway.plugins.schemescript.syntax.mutator=set-cdr\!|set\!|string-set\!|set-car\!|slot-set\!|vector-set\!|
+org.schemeway.plugins.schemescript.comment.prefix=;
+org.schemeway.plugins.schemescript.syntax.define=define|define-unit|module-implements|define-constant|define-record-type|define-namespace|define-simple-class|define-macro|define-syntax|define-class|define-macro*|defmacro|define-alias|define-syntax*|module-export|define-private|require|module-static|define-base-unit|module-name|define*|
+org.schemeway.plugins.schemescript.interpreter.saveBeforeLoad=true
+org.schemeway.plugins.schemescript.interpreter.surroundWithBegin=true
+org.schemeway.plugins.schemescript.syntax.constant=\#\!void|\#\!null|\#\!eof|
+org.schemeway.plugins.schemescript.syntax.special=include*|catch|fluid-let|let*-values|cond|let-values|throw|lambda|static-field|unless|if|future|when|import|do|receive|export|synchronized|let|try-catch|or|let*|slot-ref|package*|letrec|begin|and|field|dynamic-wind|try-finally|invoke|library|invoke-static|force|delay|case|make|primitive-throw|
+org.schemeway.plugins.schemescript.interpreter.cmdline=gosh
+eclipse.preferences.version=1
+org.schemeway.plugins.schemescript.indentation.schemes=call-with-output-file,with,1|catch,with,2|object,with,1|define-record-type,definition,0|cond,default,0|define-procedure,definition,0|let*-values,with,1|define-simple-class,definition,0|let-values,with,1|syntax-rules,with,1|lambda,definition,0|define-class,definition,0|define-syntax,definition,0|define-record,definition,0|unless,with,1|if,if,0|when,with,1|receive,with,2|define*,definition,0|define,definition,0|call-with-input-file,with,1|let,with,1|try-catch,with,1|let*,with,1|package*,with,1|define-macro,definition,0|begin,sequence,0|letrec,with,1|with-input-from-file,with,1|try-finally,with,1|with-output-to-file,with,1|library,with,1|case,with,1|make,with,1|

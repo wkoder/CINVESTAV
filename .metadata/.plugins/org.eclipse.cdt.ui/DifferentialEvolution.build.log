@@ -1,0 +1,15 @@
+
+**** Build of configuration Default for project DifferentialEvolution ****
+
+make all 
+rm -f *.o de cde
+g++ -O3 -g -Wall -fmessage-length=0 -c de.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -c randomlib.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c differentialevolution.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -c benchmark.cpp 
+g++ -O3 -g -Wall -fmessage-length=0 -c compactdifferentialevolution.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -c rand.c 
+g++ -O3 -g -Wall -fmessage-length=0 -c util.cpp 
+g++ -O3 -g -Wall -fmessage-length=0 -o de de.o randomlib.o differentialevolution.o benchmark.o compactdifferentialevolution.o rand.o util.o 
+g++ -O3 -g -Wall -fmessage-length=0 -DCOMPACT -c de.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -o cde de.o randomlib.o differentialevolution.o benchmark.o compactdifferentialevolution.o rand.o util.o 

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/21/trunk/GoSimulator/lib
+END
+servlet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/21/trunk/GoSimulator/lib/servlet.jar
+END
+swtgraphics2d.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/lib/swtgraphics2d.jar
+END
+jfreechart-1.0.13-experimental.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/21/trunk/GoSimulator/lib/jfreechart-1.0.13-experimental.jar
+END
+jfreechart-1.0.13-swt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21/trunk/GoSimulator/lib/jfreechart-1.0.13-swt.jar
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/21/trunk/GoSimulator/lib/junit.jar
+END
+jfreechart-1.0.13.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21/trunk/GoSimulator/lib/jfreechart-1.0.13.jar
+END
+gnujaxp.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/21/trunk/GoSimulator/lib/gnujaxp.jar
+END
+iText-2.1.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/lib/iText-2.1.5.jar
+END
+jcommon-1.0.16.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/lib/jcommon-1.0.16.jar
+END

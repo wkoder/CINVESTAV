@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+#include "matrix.h"
+#include "gram_schmidt.h"
+
+int RQP(int tam, double **A, double *l, double **v) {
+	double **Q, **R, **matAux, **RQ;
+	int i, iter;
+
+	if (!isSymmetricMatrix(A, tam)) {
+		printf("A is not symmetric\n");
+		return 0;
+	}
+	
+	createMatrix(&Q,tam,tam);
+	createMatrix(&R,tam,tam);
+	createMatrix(&RQ, tam, tam);
+	createMatrix(&matAux, tam, tam);
+	unitMatrix(tam, v);
+
+	iter = 0;
+	while (iter++ < 1000 && !isUpperTriangular(tam, A)) {
+		// QR = A
+		matrixQ(tam, A, Q);
+		matrixR(tam, Q, A, R);
+
+		multiplicationMatrix(tam, tam, R, Q, A);
+
+		// P = PQ
+		multiplicationMatrix(tam, tam, v, Q, matAux);
+		copyMatrix(tam, tam, matAux, v);
+	}
+	
+	for (i = 0; i < tam; i++)
+		l[i] = A[i][i];
+
+	destroyMatrix(&Q, tam, tam);
+	destroyMatrix(&R, tam, tam);
+	destroyMatrix(&matAux, tam, tam);
+	
+	return 1;
+}

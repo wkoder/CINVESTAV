@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Algorithms-C/src/unionfind.c&apos; to &apos;disjointset.c&apos;" description="Rename resource &apos;unionfind.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/unionfind.c" name="disjointset.c" stamp="1304277999955" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Algorithms-C/src/unionfind.h&apos; to &apos;disjointset.h&apos;" description="Rename resource &apos;unionfind.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/unionfind.h" name="disjointset.h" stamp="1304278005297" updateReferences="true"/>
+</session>

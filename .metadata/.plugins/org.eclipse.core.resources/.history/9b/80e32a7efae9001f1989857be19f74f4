@@ -1,0 +1,46 @@
+/*
+ * utils.c
+ *
+ *  Created on: Nov 6, 2010
+ *      Author: Viridiana Ponce, Moises Osorio
+ */
+
+#include "arithlib64.h"
+#include <stdio.h>
+
+#define NIBBLES BIT_LENGTH / 4
+
+char temp[NIBBLES * 100];
+
+int readInt(bigint_t a)
+{
+	int i;
+	ui64 val;
+
+	scanf("%s", temp);
+	for (i = NIBBLES-1, val = 0; i >= 0  && temp[i] > 0; i--) {
+		int x;
+		if (temp[i] >= 'a')
+			x = temp[i] - 'a' + 10;
+		else if (temp[i] >= 'A')
+			x = temp[i] - 'A' + 10;
+		else
+			x = temp[i] - '0';
+
+		val = (val << 4) | x;
+		if ((i & 0xF) == 0) { // i % 16 == 0
+			a[i >> 4] = val; // a[i / 16] = val
+			val = 0;
+		}
+	}
+
+	return i == NIBBLES;
+}
+
+void printInt(bigint_t a)
+{
+	int i, j;
+	for (i = WORD_LENGTH-1; i >= 0; i--)
+		for (j = 0; j < 16; j++)
+			printf("%x", (unsigned int)((a[i] >> (j << 2)) & 0xF));
+}

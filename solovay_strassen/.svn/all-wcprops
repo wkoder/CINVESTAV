@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/32/trunk/solovay_strassen
+END
+solovay_strassen_stats_noopt.dat
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/33/trunk/solovay_strassen/solovay_strassen_stats_noopt.dat
+END
+solovay_strassen_stats.dat
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/33/trunk/solovay_strassen/solovay_strassen_stats.dat
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/33/trunk/solovay_strassen/.project
+END
+solovay_strassen_stats_noopt2.dat
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/33/trunk/solovay_strassen/solovay_strassen_stats_noopt2.dat
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/33/trunk/solovay_strassen/.cproject
+END

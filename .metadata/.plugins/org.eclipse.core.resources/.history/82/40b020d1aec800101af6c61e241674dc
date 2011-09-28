@@ -1,0 +1,286 @@
+/*
+ * motiffinding.cpp
+ *
+ *  Created on: Aug 14, 2011
+ *      Author: Moises Osorio
+ */
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <string.h>
+
+#include "geneticalgorithm.h"
+
+#define MAX 1024
+
+using namespace std;
+
+vector<string> sequenceName;
+vector<vector<int> *> sequenceCode;
+int L, N;
+
+int bestScore;
+int *bestMotif;
+int *bestStarts;
+
+// DNA alphabet
+string SYMBOLS = "ACGT";
+
+/**
+ * Gets the DNA sequence from a motif code.
+ */
+void getDNASequence(char *dna, int n, int *code) {
+	for (int i = 0; i < n; i++)
+		dna[i] = SYMBOLS[code[i]];
+}
+
+/**
+ * Reads a list of sequences from a FASTA file.
+ */
+void readFasta(const char *fileName) {
+	char line[MAX];
+	N = 0;
+	
+	FILE *infile = fopen(fileName, "r");
+	while (fscanf(infile, "%s", line) != EOF) {
+		int len = strlen(line);
+		if (len == 0)
+			continue;
+		
+		if (line[0] == '>' || line[0] == ';') {
+			if (N > 0 && sequenceCode[N-1]->size() == 0)
+				continue;
+			
+			sequenceName.push_back(string(line + 1));
+			sequenceCode.push_back(new vector<int>());
+			N++;
+			
+			continue;
+		}
+		
+		vector<int> *code = sequenceCode[N-1];
+		for (int i = 0; i < len; i++)
+			code->push_back(SYMBOLS.find(toupper(line[i])));
+	}
+	
+	fclose(infile);
+}
+
+/**
+ * Calculates the minimal Hamming distance between a sequence and a motif code.
+ */
+int getScore(vector<int> *seq, int *code, int *start, int L) {
+	int best = 1 << 20;
+	int len = seq->size();
+	for (int i = 0; i < len-L; i++) {
+		int sc = 0;
+		for (int j = 0; j < L; j++)
+			if (code[j] != seq->at(i + j))
+				sc++;
+		
+		if (sc < best) {
+			*start = i;
+			best = sc;
+		}
+	}
+	
+	return best;
+}
+
+/**
+ * Calculates the score for a motif code.
+ */
+double getScore(int *code, int *starts, int L) {
+	double score = 0;
+	for (unsigned int i = 0; i < sequenceCode.size(); i++)
+		score += getScore(sequenceCode[i], code, starts + i, L);
+	
+	return score;
+}
+
+/**
+ * Gets the score from a motif code.
+ */
+double getScore(int *code) {
+	double score = 0;
+	for (unsigned int i = 0; i < sequenceCode.size(); i++)
+		score += getScore(sequenceCode[i], code, bestStarts + i, L);
+	
+	return score;
+}
+
+/**
+ * Used by the GA approach.
+ */
+double getScoreValue(double *code) {
+	for (int i = 0; i < L; i++)
+		bestMotif[i] = round(code[i]);
+	return getScore(bestMotif);
+}
+
+/**
+ * Brute force solution to the Motif Finding problem.
+ */
+int findMotifBruteForce(int *motif, int *starts) {
+	int *code = new int[L];
+	int *st = new int[N];
+	int best = 1 << 20;
+	for (int k = 0; k < 1 << (2*L); k++) { // Test each pattern
+		for (int i = 0; i < 2*L; i += 2)
+			code[i / 2] = (k >> (2*L-i-1)) & 3;
+		int score = getScore(code, st, L);
+		if (score < best) {
+			best = score;
+			for (int i = 0; i < L; i++)
+				motif[i] = code[i];
+			for (int i = 0; i < N; i++)
+				starts[i] = st[i];
+		}
+	}
+	
+	delete [] code;
+	delete [] st;
+	
+	return best;
+}
+
+/**
+ * Genetic Algorithm to find a motif.
+ */
+int findMotifMetaheuristic(int *motif, int *starts, bool silent) {
+	GeneticAlgorithm ga;
+	double *xs = new double[L];
+	double mutationRate, crossoverProbability, randomSeed;
+	int maxGenerations, populationSize;
+	double bounds[MAX][2];
+	int *precision = new int[L];
+	bestMotif = new int[L];
+	bestStarts = new int[N];
+	
+	for (int i = 0; i < L; i++) {
+		bounds[i][0] = 0;
+		bounds[i][1] = 3;
+		precision[i] = 0;
+	}
+	
+	if (!silent)
+		printf("Population size: ");
+	scanf("%d", &populationSize);
+	if (!silent)
+		printf("Maximum number of generations: ");
+	scanf("%d", &maxGenerations);
+	if (!silent)
+		printf("Mutation rate (0..1): ");
+	scanf("%lf", &mutationRate);
+	if (!silent)
+		printf("Crossover probability (0..1): ");
+	scanf("%lf", &crossoverProbability);
+	if (!silent)
+		printf("Random seed: ");
+	scanf("%lf", &randomSeed);
+	
+	ga.setCrossoverProbability(crossoverProbability);
+	ga.setMutationProbability(mutationRate);
+	ga.setElitism(true);
+	ga.setMinimizer(true);
+	ga.setRepresentationType(RepresentationType::BINARY_REPRESENTATION);
+	ga.setSelectionType(SelectionType::UNIFORM_ROULETTE_WHEEL_SELECTION);
+	ga.setCrossoverType(CrossoverType::ONE_POINT_CROSSOVER);
+	ga.setMutationType(MutationType::UNIFORM_MUTATION);
+	
+	ga.solve(xs, L, populationSize, bounds, precision, maxGenerations, randomSeed, getScoreValue);
+	int score = round(getScoreValue(xs));
+	for (int i = 0; i < L; i++)
+		motif[i] = round(xs[i]);
+	for (int i = 0; i < N; i++)
+		starts[i] = bestStarts[i];
+	
+	delete [] xs;
+	delete [] precision;
+	delete [] bestMotif;
+	delete [] bestStarts;
+	
+	return score;
+}
+
+/**
+ * Real Branch & Bound.
+ */
+void findMotifBranchAndBound(int pos, int *motif, int *starts) {
+	for (int k = 0; k < 4; k++) {
+		motif[pos] = k;
+		int score = getScore(motif, starts, pos+1);
+		if (score >= bestScore) // Pruning branch
+			continue;
+		
+		if (pos+1 < L) // Branching
+			findMotifBranchAndBound(pos+1, motif, starts);
+		else { // Found new best!
+			bestScore = score;
+			for (int i = 0; i < L; i++)
+				bestMotif[i] = motif[i];
+			for (int i = 0; i < N; i++)
+				bestStarts[i] = starts[i];
+		}
+	}
+}
+
+/**
+ * Finds a motif with the Branch & Bound approach.
+ */
+int findMotifBranchAndBound(int *motif, int *starts) {
+	int *tmpMotif = new int[L];
+	int *tmpStarts = new int[N];
+	
+	bestScore = 1 << 20;
+	bestMotif = motif;
+	bestStarts = starts;
+	findMotifBranchAndBound(0, tmpMotif, tmpStarts);
+	
+	delete [] tmpMotif;
+	delete [] tmpStarts;
+	
+	return bestScore;
+}
+
+int main(int argc, char **argv) {
+	if (argc < 3) {
+		printf("Usage: %s fasta-file L\n", argv[0]);
+		
+		return EXIT_FAILURE;
+	}
+	
+	readFasta(argv[1]);
+	L = atoi(argv[2]);
+	string option;
+	if (argc > 3)
+		option = string(argv[3]);
+	
+	char *motif = new char[L+1];
+	int *motifCode = new int[L];
+	int *starts = new int[N];
+	
+#ifdef BB
+	int score = findMotifBranchAndBound(motifCode, starts);
+#else
+#ifdef GA
+	int score = findMotifMetaheuristic(motifCode, starts, option == "--silent");
+#else
+#error No Motif Finding method selected.
+#endif
+#endif
+	
+	getDNASequence(motif, L, motifCode);
+	motif[L] = 0;
+	printf("%s\n", motif);
+	printf("Score: %d\n", score);
+//	printf("Starts: \n");
+//	for (int i = 0; i < N; i++)
+//		printf("   %d\n", starts[i]);
+	
+	return EXIT_SUCCESS;
+}

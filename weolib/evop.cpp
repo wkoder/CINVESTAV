@@ -1,0 +1,75 @@
+/*
+ * evop.cpp
+ *
+ *  Created on: May 26, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <cmath>
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "evop.h"
+
+Evop::Evop() {
+
+}
+
+Evop::~Evop() {
+
+}
+
+double Evop::norm2(double *x, int N)
+{
+	double norm = 0;
+	for (int i = 0; i < N; i++)
+		norm += x[i]*x[i];
+	return sqrt(norm);
+}
+
+int Evop::solve(double *xs, double *x0, double *delta, double e, int N, double (*f)(double *x))
+{
+	double fxs = f(x0);
+	for (int i = 0; i < N; i++)
+		xs[i] = x0[i];
+
+	int iterations = 0;
+	while (norm2(delta, N) >= e) {
+		double *best = new double[N];
+		double *current = new double[N];
+		double fbest = fxs;
+		bool changed = false;
+		iterations++;
+		
+		printf("Iteration %d\n    x = (%.9f, %.9f)\n    f(x) = %.9f\n", iterations, xs[0], xs[1], fxs);
+
+		for (int i = 0; i < N; i++) // Initial best x
+			best[i] = xs[i];
+
+		for (int mask = 0; mask < 1<<N; mask++) { // For each variation
+			for (int i = 0; i < N; i++)
+				if (mask & (1 << i))
+					current[i] = xs[i] + delta[i]/2;
+				else
+					current[i] = xs[i] - delta[i]/2;
+
+			double fcurrent = f(current);
+			if (fcurrent < fbest) { // Update best
+				changed = true;
+				fbest = fcurrent;
+				for (int i = 0; i < N; i++)
+					best[i] = current[i];
+			}
+		}
+
+		if (changed) {
+			fxs = fbest;
+			for (int i = 0; i < N; i++)
+				xs[i] = best[i];
+		} else // Decrease delta
+			for (int i = 0; i < N; i++)
+				delta[i] /= 2;
+	}
+
+	return iterations;
+}

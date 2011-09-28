@@ -1,0 +1,19 @@
+/*
+ * DifferentialEvolution.h
+ *
+ *  Created on: Aug 21, 2011
+ *      Author: Moises Osorio
+ */
+
+#ifndef DIFFERENTIALEVOLUTION_H_
+#define DIFFERENTIALEVOLUTION_H_
+
+class DifferentialEvolution {
+public:
+	DifferentialEvolution();
+	virtual ~DifferentialEvolution();
+	
+private:
+};
+
+#endif /* DIFFERENTIALEVOLUTION_H_ */

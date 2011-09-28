@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve
+END
+MultiPopCoevolutionaryEvaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/MultiPopCoevolutionaryEvaluator.java
+END
+CompetitiveEvaluator.class
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/CompetitiveEvaluator.class
+END
+EncapsulatedIndividual.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/EncapsulatedIndividual.class
+END
+GroupedProblemForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/GroupedProblemForm.java
+END
+CompetitiveEvaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/CompetitiveEvaluator.java
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/README
+END
+EliteComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/EliteComparator.class
+END
+NRandomTwoWayCompetitiveEvaluatorThread.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/NRandomTwoWayCompetitiveEvaluatorThread.class
+END
+MultiPopCoevolutionaryEvaluator.class
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/MultiPopCoevolutionaryEvaluator.class
+END
+IndComparator.class
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/IndComparator.class
+END
+IndividualAndVictories.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/IndividualAndVictories.class
+END
+CompetitiveEvaluatorThread.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/CompetitiveEvaluatorThread.class
+END
+RoundRobinCompetitiveEvaluatorThread.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/RoundRobinCompetitiveEvaluatorThread.class
+END
+NRandomOneWayCompetitiveEvaluatorThread.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/NRandomOneWayCompetitiveEvaluatorThread.class
+END
+GroupedProblemForm.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/coevolve/GroupedProblemForm.class
+END

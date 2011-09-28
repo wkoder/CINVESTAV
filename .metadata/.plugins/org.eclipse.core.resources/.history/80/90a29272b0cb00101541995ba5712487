@@ -1,0 +1,224 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include "matrix.h"
+#include "problem.h"
+
+#include "lu.h"
+#include "simplecenterdiff.h"
+#include "givens.h"
+
+/*
+ * main.c
+ *
+ *  Created on: Jul 17, 2011
+ *      Author: Viridiana Ponce, Alexis de la Cruz, Moises Osorio
+ */
+extern int n, tam, a, b, a1, a2, b1, b2;
+extern double *x;
+
+void inverseMatrix2(int n, double **matrix, double **matRes) {
+	int i, j, k;
+	
+	for (i = n-1; i >= 0; i--) {
+		printf("\nAt %d\n", i);
+		printMatrix(n, n, matRes);
+		printf("\n");
+		
+		for (j = 0; j < n; j++)
+			matRes[i][j] = 0;
+		matRes[i][i] = 1 / matrix[i][i];
+		for (j = i+1; j < n; j++)
+			for (k = i+1; k < n; k++)
+				matRes[i][k] -= matrix[i][j]*matRes[j][k];
+	}
+}
+
+int main(int argc, char **argv) {
+	if (2 == 2) {
+		int i, j;
+		double **A, **R, **Q, **tmp, **tmp2;
+		n = 5;
+//		n = 3;
+		
+		createMatrix(&A, n, n);
+		createMatrix(&R, n, n);
+		createMatrix(&Q, n, n);
+		createMatrix(&tmp, n, n);
+		createMatrix(&tmp2, n, n);
+//		givens(A, n);
+		
+		for (i = 0; i < n; i++)
+			for (j = 0; j < n; j++)
+//				A[i][j] = i+j + 1;
+				A[i][j] = rand() / (double)RAND_MAX * 100;
+//		A[0][0] = 6;
+//		A[0][1] = 5;
+//		A[0][2] = 0;
+//		A[1][0] = 5;
+//		A[1][1] = 1;
+//		A[1][2] = 4;
+//		A[2][0] = 0;
+//		A[2][1] = 4;
+//		A[2][2] = 3;
+		
+		givensFactorization(A, Q, R, n);
+//		inverseMatrix(n, A, tmp);
+//		multiplicationMatrix(n, n, R, tmp, Q);
+		
+		multiplicationMatrix(n, n, Q, R, tmp);
+		printf("A:\n");
+		printMatrix(n, n, A);
+		printf("Q*R:\n");
+		printMatrix(n, n, tmp);
+		printf("Real Q:\n");
+		inverseMatrix(n, R, tmp);
+		multiplyMatrix(n, n, n, A, tmp, tmp2);
+		printMatrix(n, n, tmp2);
+		printf("Q:\n");
+		printMatrix(n, n, Q);
+		printf("R:\n");
+		printMatrix(n, n, R);
+		printf("R^-1:\n");
+		inverseMatrix(n, R, tmp);
+		printMatrix(n, n, tmp);
+		printf("R^-1 FAST:\n");
+		inverseMatrix2(n, R, tmp);
+		printMatrix(n, n, tmp);
+		transposedMatrix(n, n, Q, tmp);
+		multiplicationMatrix(n, n, Q, tmp, tmp2);
+		printf("Q*Q':\n");
+		printMatrix(n, n, tmp2);
+		
+		return EXIT_SUCCESS;
+	}
+	
+	int i;
+	double **K, **M, **Q, **T, **aux, **InverseM;
+	double **A, **Q2, **R;
+	double **L, **U;
+	double *eigenValues, **eigenVectors;
+	double *vl, *vl2;
+	int aux2;
+
+	h = (double) (b - a) / n;
+	alfa = (double) a2 / a1;
+	beta = (double) b2 / b1;
+
+	if (ua == 0 && ub == 0) {
+		tam = n - 1;
+		aux2 = 1;
+	} else {
+		tam = n + 1;
+		aux2 = 0;
+	}
+
+	createVector(&x, tam);
+	x[0] = a + (h * aux2);
+	for (i = 1; i < tam; i++)
+		x[i] = x[i - 1] + h;
+	
+	createVector(&vl, tam);
+	createVector(&vl2, tam);
+
+	createMatrix(&K, tam, tam);
+	createMatrix(&M, tam, tam);
+	createMatrix(&InverseM, tam, tam);
+	createMatrix(&Q, tam, tam);
+	createMatrix(&T, tam, tam);
+	createMatrix(&aux, tam, tam);
+
+	createMatrix(&A, tam, tam);
+	createMatrix(&Q2, tam, tam);
+	createMatrix(&R, tam, tam);
+
+	createMatrix(&L, tam, tam);
+	createMatrix(&U, tam, tam);
+
+	createVector(&eigenValues, tam);
+	createMatrix(&eigenVectors, tam, tam);
+
+	funcT = functionT;
+	funcT2 = functionT2;
+
+	funcQ = functionQ;
+	funcM = functionM;
+
+	triDiagonalMatrix(tam, funcT, funcT2, funcT, T);
+	diagonalMatrix(tam, funcQ, Q);
+	diagonalMatrix(tam, funcM, M);
+
+	escaleByMatrix(tam, tam, 1.0/pow(h, 2), T, aux);
+	addMatrix(tam, tam, aux, Q, K);
+	copyMatrix(tam,tam,K,A);
+	
+//	factorizeUL(tam,A,eigenValues,eigenVectors);
+//	RQP(tam, A, eigenValues, eigenVectors);
+	givens(A, eigenValues, eigenVectors, tam);
+	
+//	printf("A:\n");
+//	printMatrix(n, n, A);
+//	printf("\n");
+	
+//	printf("Det ev: %f\n", determinantMatrix(eigenVectors, tam));
+//	for (i = 0; i < tam; i++) {
+//		for (j = 0; j < tam; j++)
+//			vl2[j] = eigenVectors[j][i];
+//
+//		multiplyMatrixVector(tam, tam, A, vl2, vl);
+//		printf("Av:\n");
+//		printVector(tam, vl);
+//
+//		escaleByVector(tam, eigenValues[i], vl2, vl);
+//		printf("vl:\n");
+//		printVector(tam, vl);
+//	}
+	
+//	printMatrix(tam, tam, A);
+	
+//	for (i = 0; i < tam; i++) {
+//		double s = 0;
+//		for (j = 0; j < tam; j++)
+//			s += A[j][i]*A[j][i];
+//		s = sqrt(s);
+//		for (j = 0; j < tam; j++)
+//			A[j][i] /= s;
+//	}
+
+//	printf("\nX:\n");
+//	printVector(tam, x);
+	
+//	printf("Eigenvalues:\n");
+	printVector(tam, eigenValues);
+//	printf("\nEigenvectors:\n");
+//	printMatrix(tam,tam, eigenVectors);
+	
+//	printf("\nA*V:\n");
+//	multiplyMatrix(tam, tam, tam, A, eigenVectors, aux);
+//	printMatrix(tam, tam, aux);
+//	printf("\nV*D:\n");
+//	for (i = 0; i < tam; i++)
+//		for (j = 0; j < tam; j++)
+//			K[i][j] = i==j? eigenValues[i] : 0;
+//	multiplyMatrix(tam, tam, tam, eigenVectors, K, aux);
+//	printMatrix(tam, tam, aux);
+
+	destroyMatrix(&K, tam, tam);
+	destroyMatrix(&M, tam, tam);
+	destroyMatrix(&InverseM, tam, tam);
+	destroyMatrix(&Q, tam, tam);
+	destroyMatrix(&T, tam, tam);
+	destroyMatrix(&aux, tam, tam);
+	destroyMatrix(&A, tam, tam);
+	destroyMatrix(&Q2, tam, tam);
+	destroyMatrix(&R, tam, tam);
+	destroyMatrix(&L, tam, tam);
+	destroyMatrix(&U, tam, tam);
+	destroyVector(&x, tam);
+
+	destroyVector(&eigenValues, tam);
+	destroyMatrix(&eigenVectors, tam, tam);
+
+	return EXIT_SUCCESS;
+}

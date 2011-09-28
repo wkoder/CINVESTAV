@@ -1,0 +1,89 @@
+/*
+ * CompactDifferentialEvolution.cpp
+ *
+ *  Created on: Aug 22, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <math.h>
+#include <stdio.h>
+
+#include "compactdifferentialevolution.h"
+#include "rand.h"
+#include "benchmark.h"
+
+CompactDifferentialEvolution::CompactDifferentialEvolution() {
+
+}
+
+CompactDifferentialEvolution::~CompactDifferentialEvolution() {
+
+}
+
+void generateX(double *x, double *u, double *d, int n) {
+	for (int i = 0; i < n; i++)
+		x[i] = N(u[i], d[i]);
+}
+
+double CompactDifferentialEvolution::solve(double *xb, int n, int maxEvaluations, int populationSize, double CR, 
+				double F, double randomSeed, double (*bounds)[2], double (*function)(double *x)) {
+	double u[n];
+	double d[n];
+	double elite[n];
+	double xr[n];
+	double xs[n];
+	double xt[n];
+	double xoff[n];
+	initrandom(randomSeed * MAX_);
+	
+	for (int i = 0; i < n; i++) { // PV initialization
+		u[i] = 0;
+		d[i] = 10;
+	}
+	
+	generateX(elite, u, d, n);
+	for (int i = 0; i < n; i++)
+		printf("%.6f ", elite[i]);
+	printf("\n");
+	double felite = function(elite);
+	while (benchmarkGetEvaluations() < maxEvaluations) {
+		if (benchmarkGetEvaluations() % 100 == 0)
+			printf("Felite: %.6f\n", felite);
+		// Mutation
+		generateX(xr, u, d, n);
+		generateX(xs, u, d, n);
+		generateX(xt, u, d, n);
+		for (int i = 0; i < n; i++)
+			xoff[i] = xt[i] + F*(xr[i] - xs[i]);
+		
+		// Crossover
+		for (int i = 0; i < n; i++)
+			if (randreal() > CR)
+				xoff[i] = elite[i];
+		
+		// Elite selection
+		double fxoff = function(xoff);
+		double *winner = elite;
+		double *loser = xoff;
+		if (fxoff < felite) {
+			winner = xoff;
+			loser = elite;
+			for (int i = 0; i < n; i++)
+				elite[i] = xoff[i];
+		}
+		
+		// PV update
+		for (int i = 0; i < n; i++) {
+			double u2 = u[i] + (winner[i] - loser[i]) / populationSize;
+			double d2 = sqrt(d[i]*d[i] + u[i]*u[i] - u2*u2 + 
+					(winner[i]*winner[i] - loser[i]*loser[i]) / populationSize);
+			u[i] = u2;
+			d[i] = d2;
+		}
+	}
+	
+	for (int i = 0; i < n; i++)
+		xb[i] = elite[i];
+	
+	return felite;
+}

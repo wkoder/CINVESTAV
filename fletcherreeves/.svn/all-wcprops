@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/15/trunk/fletcherreeves
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/16/trunk/fletcherreeves/.project
+END
+problem.in
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/16/trunk/fletcherreeves/problem.in
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/16/trunk/fletcherreeves/.cproject
+END
+fletcherreeves.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/16/trunk/fletcherreeves/fletcherreeves.cpp
+END
+fletcherreevesmain
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/16/trunk/fletcherreeves/fletcherreevesmain
+END
+fletcherreeves.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/16/trunk/fletcherreeves/fletcherreeves.h
+END
+fletcherreevesmain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/16/trunk/fletcherreeves/fletcherreevesmain.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/16/trunk/fletcherreeves/Makefile
+END

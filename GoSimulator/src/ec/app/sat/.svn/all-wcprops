@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat
+END
+data-215.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/data-215.cnf
+END
+SAT.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/SAT.java
+END
+sat.params
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/sat.params
+END
+SAT.class
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/SAT.class
+END
+SAT$Clause.class
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/SAT$Clause.class
+END
+data-10.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/data-10.cnf
+END
+data-1000.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/data-1000.cnf
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/app/sat/README
+END

@@ -1,0 +1,60 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.update.configurator,3.3.100.v20100512,"org.eclipse.update.configurator",1285166539512
+started,bundle,org.eclipse.wst.common.project.facet.core,1.4.100.v201005190114,"org.eclipse.wst.common.project.facet.core",1285166539512
+started,bundle,com.google.appengine.eclipse.core,1.3.3.v201006111317,"com.google.appengine.eclipse.core",1285166539512
+started,bundle,com.google.gdt.eclipse.core,1.3.3.v201006111317,"com.google.gdt.eclipse.core",1285166539512
+started,bundle,com.google.gdt.eclipse.platform.shared,1.3.3.v201006111317,"com.google.gdt.eclipse.platform.shared",1285166539512
+started,bundle,com.google.gdt.eclipse.suite,1.3.3.v201006111317,"com.google.gdt.eclipse.suite",1285166539512
+started,bundle,com.google.gwt.eclipse.core,1.3.3.v201006111317,"com.google.gwt.eclipse.core",1285166539512
+started,bundle,org.eclipse.equinox.weaving.caching,1.0.0.v20100108,"org.eclipse.equinox.weaving.caching",1285166539512
+started,bundle,org.eclipse.equinox.weaving.caching.j9,1.0.0.v20100108,"org.eclipse.equinox.weaving.caching.j9",1285166539512
+started,bundle,org.tigris.subversion.clientadapter,1.6.12,"org.tigris.subversion.clientadapter",1285166539512
+started,bundle,org.tigris.subversion.subclipse.core,1.6.12,"org.tigris.subversion.subclipse.core",1285166539512
+os,sysinfo,,,"linux",1285166539514
+arch,sysinfo,,,"x86",1285166539514
+ws,sysinfo,,,"gtk",1285166539514
+locale,sysinfo,,,"en_US",1285166539514
+processors,sysinfo,,,"2",1285166539514
+java.runtime.name,sysinfo,,,"OpenJDK Runtime Environment",1285166539514
+java.runtime.version,sysinfo,,,"1.6.0_18-b18",1285166539514
+java.specification.name,sysinfo,,,"Java Platform API Specification",1285166539514
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1285166539514
+java.specification.version,sysinfo,,,"1.6",1285166539514
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1285166539514
+java.version,sysinfo,,,"1.6.0_18",1285166539514
+java.vm.info,sysinfo,,,"mixed mode",1285166539514
+java.vm.name,sysinfo,,,"OpenJDK Client VM",1285166539514
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1285166539514
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1285166539514
+java.vm.specification.version,sysinfo,,,"1.0",1285166539514
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1285166539514
+java.vm.version,sysinfo,,,"14.0-b16",1285166539514
+started,bundle,org.eclipse.wst.web,1.1.400.v201005270700,"org.eclipse.wst.web",1285166539524
+started,bundle,org.eclipse.jst.ws.jaxws.utils,1.0.0.v201004171919,"org.eclipse.jst.ws.jaxws.utils",1285166539578
+started,bundle,org.eclipse.emf.common,2.6.0.v20100614-1136,"org.eclipse.emf.common",1285166539654
+started,bundle,org.eclipse.mylyn.monitor.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.monitor.ui",1285166539816
+started,bundle,org.eclipse.emf.ecore,2.6.0.v20100614-1136,"org.eclipse.emf.ecore",1285166539899
+started,bundle,org.eclipse.mylyn.commons.net,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.commons.net",1285166539983
+started,bundle,com.collabnet.subversion.merge,2.1.0,"com.collabnet.subversion.merge",1285166540031
+started,bundle,org.eclipse.compare,3.5.100.I20100526-0800,"org.eclipse.compare",1285166540237
+started,bundle,org.eclipse.epp.usagedata.ui,1.3.0.R201005261100,"org.eclipse.epp.usagedata.ui",1285166540626
+started,bundle,org.eclipse.mylyn.commons.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.commons.ui",1285166540629
+started,bundle,org.eclipse.team.ui,3.5.100.I20100527-0800,"org.eclipse.team.ui",1285166540823
+started,bundle,org.eclipse.ui.forms,3.5.0.v20100427,"org.eclipse.ui.forms",1285166540956
+started,bundle,org.eclipse.emf.ecore.xmi,2.5.0.v20100521-1846,"org.eclipse.emf.ecore.xmi",1285166541069
+started,bundle,org.eclipse.mylyn.bugzilla.core,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.bugzilla.core",1285166541237
+started,bundle,org.eclipse.mylyn.bugzilla.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.bugzilla.ui",1285166541310
+started,bundle,org.tigris.subversion.subclipse.ui,1.6.12,"org.tigris.subversion.subclipse.ui",1285166541442
+started,bundle,org.eclipse.mylyn.context.core,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.context.core",1285166541838
+started,bundle,org.eclipse.mylyn.context.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.context.ui",1285166541873
+started,bundle,org.eclipse.mylyn.tasks.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.tasks.ui",1285166542222
+started,bundle,org.eclipse.mylyn.team.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.team.ui",1285166542254
+started,bundle,org.eclipse.update.scheduler,3.2.300.v20100512,"org.eclipse.update.scheduler",1285166542256
+started,bundle,org.eclipse.update.core,3.2.400.v20100512,"org.eclipse.update.core",1285166542299
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1285166542718
+started,bundle,org.tigris.subversion.subclipse.mylyn,3.0.0,"org.tigris.subversion.subclipse.mylyn",1285166542947
+started,bundle,org.eclipse.jsch.core,1.1.200.I20100505-1245,"org.eclipse.jsch.core",1285166543166
+started,bundle,org.eclipse.team.cvs.core,3.3.300.I20100526-0800,"org.eclipse.team.cvs.core",1285166543169
+started,bundle,org.eclipse.team.cvs.ui,3.3.300.I20100526-0800,"org.eclipse.team.cvs.ui",1285166543296
+started,bundle,com.google.gdt.eclipse.platform.e36,1.3.3.v201006111317,"com.google.gdt.eclipse.platform.e36",1285166543416
+started,bundle,org.eclipse.jpt.core,2.3.0.v201006020000,"org.eclipse.jpt.core",1285166543507

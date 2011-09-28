@@ -1,0 +1,8 @@
+
+**** Build of configuration Default for project fletcherreeves ****
+
+make all 
+rm -f *.o fletcherreevesmain.o fletcherreeves.o fletcherreevesmain
+g++ -O2 -g -Wall -fmessage-length=0   -c -o fletcherreevesmain.o fletcherreevesmain.cpp
+g++ -c fletcherreeves.cpp 
+g++ -o fletcherreevesmain fletcherreevesmain.o fletcherreeves.o 

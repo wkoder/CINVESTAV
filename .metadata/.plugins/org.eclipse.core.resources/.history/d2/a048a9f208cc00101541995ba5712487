@@ -1,0 +1,20 @@
+CXXFLAGS =	-O3 -g -Wall -fmessage-length=0
+#CXXFLAGS = -g -Wall -fmessage-length=0
+CXX = g++ $(CXXFLAGS)
+
+OBJS =	randomlib.o
+
+LIBS =
+
+randomlib.o:
+	$(CXX) -c randomlib.c $(LIBS)
+
+differentialevolution.o:
+	$(CXX) -c differentialevolution.c
+differentialevolution: differentialevolution.o $(OBJS)
+	$(CXX) -o differentialevolution differentialevolution.o $(OBJS) $(LIBS)
+
+all:	clean differentialevolution
+
+clean:
+	rm -f *.o differentialevolution

@@ -1,0 +1,65 @@
+/*
+ * de.cpp
+ *
+ *  Created on: Aug 21, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <stdlib.h>
+#include <string>
+#include <stdio.h>
+
+#include "differentialevolution.h"
+#include "compactdifferentialevolution.h"
+#include "benchmark.h"
+
+using namespace std;
+
+string toString(double *xs, int n) {
+	string s;
+	char buffer[1024];
+	for (int i = 0; i < n; i++) {
+		if (s.size() > 0)
+			s += ", ";
+		snprintf(buffer, sizeof(buffer), "%.10lf", xs[i]); // Representation of x_i
+		s = s.append(buffer);
+	}
+	
+	return s;
+}
+
+int main(int argc, char **argv) {
+	double F, CR, randomSeed;
+	int maxEvaluations, populationSize;
+	
+	int n = atoi(argv[2]);
+	double bounds[n][2];
+	double xs[n];
+	benchmarkSetupInstance(atoi(argv[1]), n, bounds);
+	
+	printf("Population size: ");
+	scanf("%d", &populationSize);
+	printf("Maximum number of evaluations: ");
+	scanf("%d", &maxEvaluations);
+	printf("Differential variation (0..2): ");
+	scanf("%lf", &F);
+	printf("Crossover probability (0..1): ");
+	scanf("%lf", &CR);
+	printf("Random seed: ");
+	scanf("%lf", &randomSeed);
+	
+#ifdef COMPACT
+	CompactDifferentialEvolution de;
+#else
+	DifferentialEvolution de;
+#endif
+	
+	double Fxs = de.solve(xs, n, maxEvaluations, populationSize, CR, F, 
+			randomSeed, bounds, benchmarkEvaluation);
+	
+	printf("xs* = %s\n", toString(xs, n).c_str());
+	printf("F(xs) = %.6f\n", Fxs);
+	printf("Evaluations: %d");
+	
+	return EXIT_SUCCESS;
+}

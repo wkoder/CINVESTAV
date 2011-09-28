@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select
+END
+MultiSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/MultiSelection.java
+END
+FitProportionateSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/FitProportionateSelection.class
+END
+TournamentSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/TournamentSelection.java
+END
+BestSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/BestSelection.java
+END
+SUSSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/SUSSelection.class
+END
+GreedyOverselection.class
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/GreedyOverselection.class
+END
+SelectDefaults.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/SelectDefaults.java
+END
+SigmaScalingSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/SigmaScalingSelection.java
+END
+BoltzmannSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/BoltzmannSelection.java
+END
+RandomSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/RandomSelection.class
+END
+BestSelection$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/BestSelection$1.class
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/README
+END
+FitProportionateSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/FitProportionateSelection.java
+END
+SUSSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/SUSSelection.java
+END
+GreedyOverselection.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/GreedyOverselection.java
+END
+FirstSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/FirstSelection.class
+END
+MultiSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/MultiSelection.class
+END
+RandomSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/RandomSelection.java
+END
+TournamentSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/TournamentSelection.class
+END
+BestSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/BestSelection.class
+END
+GreedyOverselection$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/GreedyOverselection$1.class
+END
+SelectDefaults.class
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/SelectDefaults.class
+END
+SigmaScalingSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/SigmaScalingSelection.class
+END
+FirstSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/FirstSelection.java
+END
+BoltzmannSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/select/BoltzmannSelection.class
+END

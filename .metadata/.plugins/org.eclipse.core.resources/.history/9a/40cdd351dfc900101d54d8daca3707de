@@ -1,0 +1,411 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#define EPS 1e-9
+
+void createMatrix(double ***mat, int n, int m) {
+	int i;
+	*mat = (double **) malloc(n * sizeof(double *));
+	for (i = 0; i < n; i++)
+		(*mat)[i] = (double *) malloc(m * sizeof(double));
+}
+
+void createVector(double **vector, int n) {
+	*vector = (double *) malloc(n * sizeof(double));
+}
+
+void destroyMatrix(double ***mat, int n, int m) {
+	int i;
+	for (i = 0; i < n; i++)
+		free((*mat)[i]);
+	free(*mat);
+	*mat = NULL;
+}
+
+void destroyVector(double **vector, int n) {
+	free(*vector);
+	*vector = NULL;
+}
+
+int isSymmetricMatrix(double **a, int n) {
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			if (fabs(a[i][j] - a[j][i]) > EPS)
+				return 0;
+	
+	return 1;
+}
+
+int isCeroDiagonalInf(double **UL, int tam){
+	int i;
+	for (i = 1;i<tam; i++){
+		if (abs(UL[i][i-1]) > EPS)
+			return 0;
+	}
+	return 1;
+}
+
+/**
+ * Function to multiply a scalar by a matrix.
+ * @attribute m, number of rows by matrix.
+ * @attribute n, number of columns by matrix.
+ * @attribute escale, escale.
+ * @attribute mat, matrix by multiplicate.
+ * @attribute matRes, matrix where is come back the result.
+ */
+void escaleByMatrix(int m, int n, double escale, double **mat, double **matRes) {
+	int i, j;
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++)
+			matRes[i][j] = escale * mat[i][j];
+}
+
+/**
+ * Function add two matrix
+ * @attribute m, number of rows by matrix.
+ * @attribute n, number of columns by matrix.
+ * @attribute mat, matrix one to add.
+ * @attribute mat2, matrix two to add.
+ * @attribute matRes, matrix where is come back the result.
+ */
+void addMatrix(int m, int n, double **mat, double **mat2, double **matRes) {
+	int i, j;
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++)
+			matRes[i][j] = mat[i][j] + mat2[i][j];
+}
+
+/**
+ * Function by multiply two matrix.
+ * @attribute  m, number of rows by matrix mat1, mat2, matRes.
+ * @attribute n, number of columns by matrix, mat1, mat2, matRes.
+ * @attribute mat1, matrix to multiply
+ * @attribute mat2, matrix to multiply.
+ * @attribute, matrix where is come back the result.
+ */
+void multiplicationMatrix(int m, int n, double **mat1, double **mat2, double **matRes) {
+	int i, j, k;
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++) {
+			matRes[i][j] = 0;
+			for (k = 0; k < m; k++)
+				matRes[i][j] += mat1[i][k] * mat2[k][j];
+		}
+}
+
+/**
+ * Function by multiply two matrix.
+ * @attribute  m, number of rows by matrix mat1, mat2, matRes.
+ * @attribute n, number of columns by matrix, mat1, mat2, matRes.
+ * @attribute mat1, matrix to multiply
+ * @attribute mat2, matrix to multiply.
+ * @attribute, matrix where is come back the result.
+ */
+void multiplyMatrix(int m, int n, int o, double **mat1, double **mat2, double **matRes) {
+	int i, j, k;
+	for (i = 0; i < m; i++)
+		for (j = 0; j < o; j++) {
+			matRes[i][j] = 0;
+			for (k = 0; k < n; k++)
+				matRes[i][j] += mat1[i][k] * mat2[k][j];
+		}
+}
+
+void multiplyMatrixVector(int m, int n, double **m, double *v, double *vres) {
+	int i, j;
+	
+}
+
+/**
+ * Function that calculate a diagonal matrix
+ * @attribute n, number of rows and columns by matrix.
+ * @attribute (*f)(), function to eval that gives the values of diagonal.
+ * @attribute values, values to eval in the function
+ * @attribute matRes, matrix where is come back the result.
+ */
+void diagonalMatrix(int n, double(*f)(), double **matRes) {
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			if (i == j)
+				matRes[i][j] = f();
+			else
+				matRes[i][j] = 0;
+}
+
+/**
+ * Function that calculate a tridiagonal matrix
+ * @attribute n, number of rows and columns by matrix
+ * @attribute (*f)() function to execute in down diagonal of matrix
+ * @attribute (*f2)() function to execute in principal diagonal of matrix
+ * @attribute (*f)() function to execute in up diagonal of matrix
+ */
+void triDiagonalMatrix(int n, double(*f)(), double(*f2)(), double(*f3)(), double **matRes) {
+	int i;
+	for (i = 0; i < n; i++) {
+//		if (i < n - 1) {
+//			matRes[i + 1][i] = f();
+//			matRes[i][i + 1] = f3();
+//		}
+		if (i > 0)
+			matRes[i][i-1] = f();
+		if (i < n-1)
+			matRes[i][i+1] = f3();
+		matRes[i][i] = f2();
+	}
+}
+/**
+ * Function that transposed a matrix.
+ * @attribute  m, number of rows by matrix mat1, mat2, matRes.
+ * @attribute n, number of columns by matrix, mat1, mat2, matRes.
+ * @attribute matrix, matrix to transposed
+ * @attribute, matrix where is come back the result.
+ */
+void transposedMatrix(int m, int n, double **matrix, double **matRes) {
+	int i, j;
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++)
+			matRes[j][i] = matrix[i][j];
+}
+
+double determinantMatrix(double **a, int n) {
+	int i, j, j1, j2;
+	double det = 0;
+	double **m = NULL;
+	
+	if (n < 1) { /* Error */
+		
+	} else if (n == 1) { /* Shouldn't get used */
+		det = a[0][0];
+	} else if (n == 2) {
+		det = a[0][0] * a[1][1] - a[1][0] * a[0][1];
+	} else {
+		det = 0;
+		for (j1 = 0; j1 < n; j1++) {
+			createMatrix(&m, n-1, n-1);
+			for (i = 1; i < n; i++) {
+				j2 = 0;
+				for (j = 0; j < n; j++) {
+					if (j == j1)
+						continue;
+					m[i - 1][j2] = a[i][j];
+					j2++;
+				}
+			}
+			det += pow(-1.0, 1.0 + j1 + 1.0) * a[0][j1] * determinantMatrix(m, n - 1);
+			destroyMatrix(&m, n-1, n-1);
+		}
+	}
+	return (det);
+}
+
+void cofactorMatrix(int n, int row, int col, double **matrix, double **matRes) {
+	// indicate which col and row is being copied to dest
+	int colCount = 0, rowCount = 0;
+	int i, j;
+	
+	for (i = 0; i < n; i++) {
+		if (i != row) {
+			colCount = 0;
+			for (j = 0; j < n; j++) {
+				// when j is not the element
+				if (j != col) {
+					matRes[rowCount][colCount] = matrix[i][j];
+					colCount++;
+				}
+			}
+			rowCount++;
+		}
+	}
+}
+
+void inverseMatrix(int n, double **matrix, double **matRes) {
+	double det, value;
+	double **minor;
+	int i, j;
+	det = determinantMatrix(matrix, n);
+	det = 1 / det;
+	createMatrix(&minor, n-1, n-1);
+
+	for (j = 0; j < n; j++) {
+		for (i = 0; i < n; i++) {
+			// get the co-factor (matrix) of A(j,i)
+			cofactorMatrix(n, j, i, matrix, minor);
+			//GetMinor(A,minor,j,i,n);
+			value = determinantMatrix(minor, n-1);
+			matRes[i][j] = det * value;
+			//Y[i][j] = det*CalcDeterminant(minor,order-1);
+			if ((i + j) % 2 == 1)
+				matRes[i][j] = -matRes[i][j];
+		}
+	}
+
+	destroyMatrix(&minor, n-1, n-1);
+}
+
+void unitMatrix(int n, double **mat) {
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			mat[i][j] = i == j;
+}
+
+int isDiagonal(int n, double **mat) {
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			if (i != j && fabs(mat[i][j]) > EPS)
+				return 0;
+	return 1;
+}
+
+int isUpperTriangular(int n, double **mat) {
+	int i, j;
+	for (i = 0; i < n; i++)
+		for (j = 0; j < i; j++)
+			if (fabs(mat[i][j]) > EPS)
+				return 0;
+	return 1;
+}
+
+void copyMatrix(int m, int n, double **mat, double **matRes) {
+	int i, j;
+	for (i = 0; i < m; i++)
+		for (j = 0; j < n; j++)
+			matRes[i][j] = mat[i][j];
+}
+
+/**
+ * Function by print matrix
+ * @attribute m, number of rows by matrix
+ * @attribute n, number of columns by matrix
+ * @attribute **mat, matrix to print.
+ */
+void printMatrix(int m, int n, double **mat) {
+	int i, j;
+	for (i = 0; i < m; i++) {
+		for (j = 0; j < n; j++)
+			printf("%.4f ", mat[i][j]);
+		printf("\n");
+	}
+}
+
+/**
+ * Function to multiplicate a escale with a vector
+ * @attribute tam, size of vector
+ * @attribute escale, escale.
+ * @attribute vector, vector to multiplicate.
+ * @attribute vectorRes, vector where is come back the result
+ */
+void escaleByVector(int tam, double escale, double *vector, double *vectorRes) {
+	int i;
+	for (i = 0; i < tam; i++)
+		vectorRes[i] = escale * vector[i];
+}
+
+/**
+ * Function to project a vector in a base vector
+ * @attribute tam, size of vector
+ * @attribute vector1, base vector
+ * @attribute vector2, vector to project
+ * @attribute vectorRes, vector where is come back the result
+ */
+void projection(int tam, double *vector1, double *vector2, double *vectorRes) {
+	int i;
+	double dotProduct;
+	double normSquare;
+	dotProduct = 0;
+	normSquare = 0;
+	for (i = 0; i < tam; i++) {
+		dotProduct += vector1[i] * vector2[i];
+		normSquare += vector1[i] * vector1[i];
+	}
+	escaleByVector(tam, (double) (dotProduct / normSquare), vector1, vectorRes);
+}
+
+/**
+ * Compute the norm of a vector
+ * @attribute tam, size of vector
+ * @attribute vector, vector to compute the norm
+ * @return norm of vector.
+ */
+double norm(int tam, double *vector) {
+	int i;
+	double res;
+	res = 0.0;
+	for (i = 0; i < tam; i++)
+		res += pow(vector[i], 2);
+	return sqrt(res);
+}
+
+/**
+ * Function that rest two vector.
+ * @attribute tam, size of vector1, vector2, vectorRes.
+ * @attribute vector1, minuend.
+ * @attribute vector2, sustrahend.
+ * @attribute vectorRes, vector where is come back the result of rest.
+ */
+void restVector(int tam, double *vector1, double *vector2, double *vectorRes) {
+	int i;
+	for (i = 0; i < tam; i++)
+		vectorRes[i] = vector1[i] - vector2[i];
+}
+
+/**
+ * Function to calculate the vector u.
+ * @attribute tam, size of vectora, vectorRes.
+ * @attribute tammatrix, size of matrixe.
+ * @attribute matrixe, matrix of vectors e.
+ * @attribute vectora, vectora.
+ * @attribute vectorRes, vector u where is come back the result.
+ */
+void vectoru(int tam, int tammatrix, double **matrixe, double *vectora, double *vectorRes) {
+	int i, j;
+	double *vectorRes2, *vectorE;
+	createVector(&vectorRes2, tam);
+	createVector(&vectorE, tam);
+	
+	for (i = 0; i < tam; i++)
+		vectorE[i] = matrixe[i][0];
+	
+	projection(tam, vectorE, vectora, vectorRes2);
+	restVector(tam, vectora, vectorRes2, vectorRes);
+	
+	for (j = 1; j < tammatrix; j++) {
+		for (i = 0; i < tam; i++)
+			vectorE[i] = matrixe[i][j];
+		projection(tam, vectorE, vectora, vectorRes2);
+		restVector(tam, vectorRes, vectorRes2, vectorRes);
+	}
+	
+	destroyVector(&vectorRes2, tam);
+	destroyVector(&vectorE, tam);
+}
+
+/**
+ * Function that compute the vector e.
+ * @attribute tam, size of vectoru, vectorRes
+ * @attribute vectoru, vector u;
+ * @attribute vectoRes, vector where is come back the result(vector e).
+ */
+void vectore(int tam, double *vectoru, double *vectorRes) {
+	int i;
+	for (i = 0; i < tam; i++)
+		vectorRes[i] = (double) (vectoru[i] / norm(tam, vectoru));
+}
+
+/**
+ * Function to print a vector.
+ * @attribute tam, size of vector.
+ * @attribute vector, vector by print.
+ */
+
+void printVector(int tam, double *vector) {
+	int i;
+	for (i = 0; i < tam; i++)
+		printf("%.4f ", vector[i]);
+	printf("\n");
+}
+

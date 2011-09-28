@@ -1,0 +1,30 @@
+CXXFLAGS =	-O3 -g -Wall -fmessage-length=0
+#CXXFLAGS = -g -Wall -fmessage-length=0
+CXX = g++ $(CXXFLAGS)
+
+OBJS =	
+
+LIBS =
+
+randomlib.o:
+	$(CXX) -c randomlib.c $(LIBS)
+
+maings.o:
+	$(CXX) -c maings.c
+maings: maings.o $(OBJS)
+	$(CXX) -o maings maings.o $(OBJS) $(LIBS)
+
+mainlu.o:
+	$(CXX) -c mainlu.c
+mainlu: mainlu.o $(OBJS)
+	$(CXX) -o mainlu mainlu.o $(OBJS) $(LIBS)
+
+mainao.o:
+	$(CXX) -c mainao.c
+mainao: mainao.o $(OBJS)
+	$(CXX) -o mainao mainao.o $(OBJS) $(LIBS)
+
+all:	clean mainao
+
+clean:
+	rm -f *.o mainao

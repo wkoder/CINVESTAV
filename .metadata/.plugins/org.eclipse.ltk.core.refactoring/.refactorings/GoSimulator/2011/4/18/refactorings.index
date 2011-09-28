@@ -1,0 +1,5 @@
+1303972744483	Rename type 'GoSimulator'
+1303998218786	Rename field 'weights'
+1304010114247	Rename field 'BEST_INDIVIDUAL'
+1304013773171	Rename method 'evaluate'
+1304015585295	Delete elements

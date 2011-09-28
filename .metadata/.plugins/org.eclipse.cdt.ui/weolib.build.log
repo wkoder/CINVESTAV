@@ -1,0 +1,15 @@
+
+**** Build of configuration Default for project weolib ****
+
+make all 
+rm -f *.o motiffindingbb motiffindingga
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -DBB -c motiffinding.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -c randomlib.c 
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -c geneticalgorithm.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -c individual.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -c stats.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -c tree.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -c treenode.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -o motiffindingbb motiffinding.o randomlib.o geneticalgorithm.o individual.o stats.o tree.o treenode.o 
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -DGA -DNO_STATS -c motiffinding.cpp
+g++ -O3 -g -Wall -fmessage-length=0 -std=gnu++0x -o motiffindingga motiffinding.o randomlib.o geneticalgorithm.o individual.o stats.o tree.o treenode.o 

@@ -1,0 +1,6 @@
+
+**** Build of configuration Default for project Bioinformatics ****
+
+make all 
+rm -f *.o suffixarray-moises
+gcc -O3 -g -Wall -fmessage-length=0 -o suffixarray-moises suffixarray.c 

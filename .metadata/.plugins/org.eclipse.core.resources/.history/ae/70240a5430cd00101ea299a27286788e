@@ -1,0 +1,92 @@
+/*
+ * DifferentialEvolution.cpp
+ *
+ *  Created on: Aug 21, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include "differentialevolution.h"
+#include "randomlib.h"
+#include "benchmark.h"
+#include "util.h"
+
+DifferentialEvolution::DifferentialEvolution() {
+
+}
+
+DifferentialEvolution::~DifferentialEvolution() {
+
+}
+
+double DifferentialEvolution::solve(double *xs, int n, int maxEvaluations, int populationSize, double CR, 
+		double F, double randomSeed, double (*bounds)[2], double (*function)(double *x)) {
+	double x1[populationSize][n];
+	double x2[populationSize][n];
+	double cost[populationSize];
+	double trial[n];
+	warmup_random(randomSeed);
+	
+	for (int i = 0; i < populationSize; i++) {
+		for (int j = 0; j < n; j++)
+			x1[i][j] = rndreal(bounds[j][0], bounds[j][1]);
+		cost[i] = function(x1[i]);
+	}
+	
+	for (int generation = 1; benchmarkGetEvaluations() < maxEvaluations; generation++) {
+		for (int i = 0; i < populationSize; i++) {
+			{ // DELETE ME
+				double b = 1e18;
+				for (int j = 0; j < populationSize; j++)
+					if (cost[j] < b)
+						b = cost[j];
+				printf("Iteration #%d:\n", );
+				printf("Best %d: %.6f\n", generation, b);
+			}
+
+			// Pick 3 vectors
+			int a = rndint(populationSize);
+			int b = rndint(populationSize);
+			while (b == a)
+				b = rndint(populationSize);
+			int c = rndint(populationSize);
+			while (c == a || c == b)
+				c = rndint(populationSize);
+			
+			int j = rndint(n); // Random first parameter
+			for (int k = 1; k <= n; k++) {
+				if (flip(CR) || k == n) // From random vector plus weighted differential
+					trial[j] = x1[c][j] + F * (x1[a][j] - x1[b][j]);
+				else // From target
+					trial[j] = x1[i][j];
+				j = (j + 1) % n;
+			}
+			
+			double score = function(trial);
+			if (score <= cost[i]) { // Improves!
+				for (int j = 0; j < n; j++)
+					x2[i][j] = trial[j];
+				cost[i] = score;
+			} else // Keep it
+				for (j = 0; j < n; j++)
+					x2[i][j] = x1[i][j];
+		}
+		
+		// Replace old population
+		for (int i = 0; i < populationSize; i++)
+			for (int j = 0; j < n; j++)
+				x1[i][j] = x2[i][j];
+	}
+	
+	int best = 0;
+	for (int i = 1; i < populationSize; i++)
+		if (cost[i] < cost[best])
+			best = i;
+	for (int j = 0; j < n; j++)
+		xs[j] = x1[best][j];
+	
+	return cost[best];
+}

@@ -1,0 +1,52 @@
+/*
+ * de.cpp
+ *
+ *  Created on: Aug 21, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <stdlib.h>
+
+#include "differentialevolution.h"
+
+string toString(double *xs, int n) {
+	if (treeChromosome != NULL)
+		return treeChromosome->toString();
+	
+	string s;
+	char buffer[1024];
+	for (int i = 0; i < n; i++) {
+		if (s.size() > 0)
+			s += ", ";
+		if (realx != NULL)
+			snprintf(buffer, sizeof(buffer), "%.10lf", realx[i]); // Representation of x_i
+		else if (intx != NULL)
+			snprintf(buffer, sizeof(buffer), "%d", intx[i]); // Representation of x_i
+		s = s.append(buffer);
+	}
+	
+	return s;
+}
+
+int main(int argc, char **argv) {
+	DifferentialEvolution de;
+	double mutationRate, crossoverProbability, randomSeed;
+	int maxGenerations, populationSize;
+
+	printf("Population size: ");
+	scanf("%d", &populationSize);
+	printf("Maximum number of generations: ");
+	scanf("%d", &maxGenerations);
+	printf("Differential variation (0..2): ");
+	scanf("%lf", &mutationRate);
+	printf("Crossover probability (0..1): ");
+	scanf("%lf", &crossoverProbability);
+	printf("Random seed: ");
+	scanf("%lf", &randomSeed);
+	
+	double Fxs = de.solve(xs, maxGenerations, populationSize, crossover, mutation, n, F);
+	printf("xs* = %s\n", );
+	printf("F(xs) = %.6f\n", Fxs);
+	
+	return EXIT_SUCCESS;
+}

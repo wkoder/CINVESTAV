@@ -1,0 +1,17 @@
+1296529692540	Rename type 'QueenAtacker'
+1296529700411	Rename package 'mx.cinvestav.josorio.queenatacker'
+1296531003354	Rename field 'board'
+1296531013810	Rename field 'spinner'
+1296531857195	Rename enum constant 'ATTACKED'
+1296531943722	Rename enum constant 'EMPTY'
+1296740433140	Rename local variable 'boardSizePanel'
+1296742345751	Rename local variable 'boardPos'
+1296745324651	Move file
+1296745418996	Move file
+1296745560902	Move file
+1296745568859	Move file
+1296745595745	Move file
+1296745729385	Delete element
+1296745739743	Move file
+1296745778942	Move file
+1296745803051	Delete element

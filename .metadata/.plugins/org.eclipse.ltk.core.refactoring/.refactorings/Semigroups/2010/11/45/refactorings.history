@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Semigroups/Semigroups&apos; to &apos;Semigroups.c&apos;" description="Rename resource &apos;Semigroups&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Semigroups" name="Semigroups.c" stamp="1288669737987" updateReferences="true"/>
+</session>

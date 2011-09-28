@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec
+END
+Fitness.class
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Fitness.class
+END
+BreedingSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/BreedingSource.java
+END
+Setup.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Setup.java
+END
+BreedingPipeline.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/BreedingPipeline.java
+END
+Initializer.class
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Initializer.class
+END
+Finisher.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Finisher.java
+END
+SelectionMethod.class
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/SelectionMethod.class
+END
+Statistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Statistics.class
+END
+DefaultsForm.class
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/DefaultsForm.class
+END
+ECDefaults.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/ECDefaults.java
+END
+Group.class
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Group.class
+END
+Evolve.class
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Evolve.class
+END
+Problem.class
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Problem.class
+END
+EvolutionState.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/EvolutionState.java
+END
+Evaluator.class
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Evaluator.class
+END
+SelectionMethod.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/SelectionMethod.java
+END
+Singleton.class
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Singleton.class
+END
+Exchanger.class
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Exchanger.class
+END
+Subpopulation.class
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Subpopulation.class
+END
+BreedingPipeline.class
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/BreedingPipeline.class
+END
+Statistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Statistics.java
+END
+Finisher.class
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Finisher.class
+END
+Species.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Species.java
+END
+Group.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Group.java
+END
+Breeder.class
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Breeder.class
+END
+Evolve.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Evolve.java
+END
+Problem.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Problem.java
+END
+Evaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Evaluator.java
+END
+Singleton.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Singleton.java
+END
+ECDefaults.class
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/ECDefaults.class
+END
+Exchanger.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Exchanger.java
+END
+Subpopulation.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Subpopulation.java
+END
+Prototype.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Prototype.java
+END
+Clique.class
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Clique.class
+END
+Breeder.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Breeder.java
+END
+EvolutionState.class
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/EvolutionState.class
+END
+Fitness.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Fitness.java
+END
+Individual.class
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Individual.class
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/README
+END
+Population.class
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Population.class
+END
+Species.class
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Species.class
+END
+Clique.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Clique.java
+END
+Initializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Initializer.java
+END
+BreedingSource.class
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/BreedingSource.class
+END
+Setup.class
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Setup.class
+END
+Individual.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Individual.java
+END
+Prototype.class
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Prototype.class
+END
+ec.params
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/ec.params
+END
+Population.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/Population.java
+END
+DefaultsForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/DefaultsForm.java
+END

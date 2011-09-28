@@ -1,0 +1,89 @@
+/*
+ * givens.c
+ *
+ *  Created on: Aug 18, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include "matrix.h"
+
+void givensFactorization(double **A, double **Q, double **R, int n) {
+	int i, j, k;
+	double **tmp;
+	double b, c, s, x, y;
+	
+	createMatrix(&tmp, n, n);
+	
+	copyMatrix(n, n, A, R);
+	for (j = 0; j < n; j++)
+		for (i = n-1; i > j; i--) {
+			b = sqrt(R[i-1][j]*R[i-1][j] + R[i][j]*R[i][j]);
+//			printf("B at %d,%d: %f\n", i, j, b);
+			if (b < 1e-9)
+				continue;
+			c = R[i-1][j] / b;
+			s = R[i][j] / b;
+		
+			for (k = j; k <= n; k++) {
+				x = c*R[i-1][k] + s*R[i][k];
+				y = -s*R[i-1][k] + c*R[i][k];
+				R[i][k] = y;
+				R[i-1][k] = x;
+			}
+		}
+	
+	inverseMatrix(n, A, tmp);
+	multiplyMatrix(n, n, n, R, tmp, Q);
+	
+	transposedMatrix(n, n, Q, tmp);
+	copyMatrix(n, n, tmp, Q);
+	
+	destroyMatrix(&tmp, n, n);
+}
+
+void givens(double **A, double *l, double **v, int n) {
+	int i, iter;
+	double **R, **Q, **tmp;
+	createMatrix(&Q, n, n);
+	createMatrix(&R, n, n);
+	createMatrix(&tmp, n, n);
+	
+	unitMatrix(n, v);
+	
+	iter = 0;
+	while (iter++ < 1000 && !isUpperTriangular(n, A)) {
+//	while (iter++ < 1000 && !isDiagonal(n, A)) {
+		printf("\n   A(%d):\n", iter-1);
+		printMatrix(n, n, A);
+		// QR = A
+		givensFactorization(A, Q, R, n);
+		printf("Q:\n");
+		printMatrix(n, n, Q);
+		printf("R:\n");
+		printMatrix(n, n, R);
+				
+		
+		multiplyMatrix(n, n, n, R, Q, A);
+//		transposedMatrix(n, n, Q, tmp);
+//		multiplicationMatrix(n, n, R, tmp, A);
+		
+		// P = PQ
+		multiplyMatrix(n, n, n, v, Q, tmp);
+		copyMatrix(n, n, tmp, v);
+	}
+	printf("\n   A(%d):\n", iter-1);
+	printMatrix(n, n, A);
+	
+	printf("   ITER: %d\n", iter);
+	
+	for (i = 0; i < n; i++)
+		l[i] = A[i][i];
+	
+	destroyMatrix(&Q, n, n);
+	destroyMatrix(&R, n, n);
+	destroyMatrix(&tmp, n, n);
+}

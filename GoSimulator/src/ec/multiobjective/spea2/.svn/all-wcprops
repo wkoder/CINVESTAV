@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2
+END
+SPEA2MultiObjectiveFitness.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2MultiObjectiveFitness.class
+END
+SPEA2Evaluator.class
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2Evaluator.class
+END
+SPEA2TournamentSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2TournamentSelection.class
+END
+SPEA2Breeder.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2Breeder.java
+END
+SPEA2Breeder.class
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2Breeder.class
+END
+SPEA2MultiObjectiveFitness.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2MultiObjectiveFitness.java
+END
+spea2.params
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/spea2.params
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/README
+END
+SPEA2Evaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2Evaluator.java
+END
+SPEA2TournamentSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/multiobjective/spea2/SPEA2TournamentSelection.java
+END

@@ -1,0 +1,31 @@
+CXXFLAGS =	-O3 -g -Wall -fmessage-length=0
+#CXXFLAGS = -g -Wall -fmessage-length=0
+CXX = g++ $(CXXFLAGS)
+
+OBJS =	lu.o matrix.o gram_schmidt.o simplecenterdiff.o
+
+LIBS =
+
+lu.o:
+	$(CXX) -c lu.c $(LIBS)
+gram_schmidt.o:
+	$(CXX) -c gram_schmidt.c $(LIBS)
+matrix.o:
+	$(CXX) -c matrix.c $(LIBS)
+simplecenterdiff.o:
+	$(CXX) -c simplecenterdiff.c $(LIBS)
+
+maings.o:
+	$(CXX) -c maings.c
+maings: maings.o $(OBJS_GA)
+	$(CXX) -o maings maings.o $(OBJS) $(LIBS)
+
+mainlu.o:
+	$(CXX) -c mainlu.c
+mainlu: mainlu.o $(OBJS_GA)
+	$(CXX) -o mainlu mainlu.o $(OBJS) $(LIBS)
+
+all:	clean mainlu
+
+clean:
+	rm -f *.o mainlu maings

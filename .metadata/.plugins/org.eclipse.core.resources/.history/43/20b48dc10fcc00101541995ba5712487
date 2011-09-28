@@ -1,0 +1,59 @@
+/*
+ * de.cpp
+ *
+ *  Created on: Aug 21, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <stdlib.h>
+#include <string>
+#include <stdio.h>
+
+#include "differentialevolution.h"
+#include "benchmark.h"
+
+using namespace std;
+
+string toString(double *xs, int n) {
+	string s;
+	char buffer[1024];
+	for (int i = 0; i < n; i++) {
+		if (s.size() > 0)
+			s += ", ";
+		snprintf(buffer, sizeof(buffer), "%.10lf", xs[i]); // Representation of x_i
+		s = s.append(buffer);
+	}
+	
+	return s;
+}
+
+int main(int argc, char **argv) {
+	DifferentialEvolution de;
+	double mutationRate, crossoverProbability, randomSeed;
+	int maxGenerations, populationSize;
+	double *xs;
+	
+	int n = 10;
+	instance = new string(argv[1]);
+	
+	xs = new double[n];
+
+	printf("Population size: ");
+	scanf("%d", &populationSize);
+	printf("Maximum number of generations: ");
+	scanf("%d", &maxGenerations);
+	printf("Differential variation (0..2): ");
+	scanf("%lf", &mutationRate);
+	printf("Crossover probability (0..1): ");
+	scanf("%lf", &crossoverProbability);
+	printf("Random seed: ");
+	scanf("%lf", &randomSeed);
+	
+	double Fxs = de.solve(xs, maxGenerations, populationSize, crossoverProbability, mutationRate, n, F);
+	printf("xs* = %s\n", toString(xs, n).c_str());
+	printf("F(xs) = %.6f\n", Fxs);
+	
+	delete [] xs;
+	
+	return EXIT_SUCCESS;
+}

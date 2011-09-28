@@ -1,0 +1,108 @@
+CXXFLAGS =	-O3 -g -Wall -fmessage-length=0 -std=gnu++0x
+#CXXFLAGS = -g -Wall -fmessage-length=0 -std=gnu++0x
+CXX = g++ $(CXXFLAGS)
+
+OBJS_EVOP =		evopmain.o evop.o
+OBJS_EVST = 	evolutionstrategymain.o rand.o evolutionstrategy.o
+OBJS_GA   =		randomlib.o geneticalgorithm.o individual.o stats.o tree.o treenode.o
+
+LIBS =
+
+rand.o:
+	$(CXX) -c rand.c $(LIBS)
+randomlib.o:
+	$(CXX) -c randomlib.c $(LIBS)
+
+evop.o:
+	$(CXX) -c evop.cpp $(LIBS)
+evopmain:	$(OBJS_EVOP)
+	$(CXX) -o evopmain $(OBJS_EVOP) $(LIBS)
+
+evolutionstrategy.o:
+	$(CXX) -c evolutionstrategy.cpp $(LIBS)
+evolutionstrategymain:	$(OBJS_EVST)
+	$(CXX) -o evolutionstrategymain $(OBJS_EVST) $(LIBS)
+
+stats.o:
+	$(CXX) -c stats.cpp
+individual.o:
+	$(CXX) -c individual.cpp
+geneticalgorithm.o:
+	$(CXX) -c geneticalgorithm.cpp
+treenode.o:
+	$(CXX) -c treenode.cpp
+tree.o:
+	$(CXX) -c tree.cpp
+
+geneticalgorithmmain:	geneticalgorithmmain.o $(OBJS_GA)
+	$(CXX) -o geneticalgorithmmain geneticalgorithmmain.o $(OBJS_GA) $(LIBS)
+
+homework3-gray.o:
+	$(CXX) -DGRAY_REPR -c homework3.cpp
+homework3-gray:	homework3-gray.o $(OBJS_GA)
+	$(CXX) -o homework3-gray homework3.o $(OBJS_GA) $(LIBS)
+
+homework3-integer.o:
+	$(CXX) -DINTEGER_REPR -c homework3.cpp
+homework3-integer:	homework3-integer.o $(OBJS_GA)
+	$(CXX) -o homework3-integer homework3.o $(OBJS_GA) $(LIBS)
+
+combinatorial5.o:
+	$(CXX) -DCOSTS_FILE=\"ajuste.dat\" -c combinatorial.cpp
+combinatorial5: combinatorial5.o $(OBJS_GA)
+	$(CXX) -o combinatorial5 combinatorial.o $(OBJS_GA) $(LIBS)
+
+combinatorial12.o:
+	$(CXX) -DCOSTS_FILE=\"tai12.dat\" -c combinatorial.cpp
+combinatorial12: combinatorial12.o $(OBJS_GA)
+	$(CXX) -o combinatorial12 combinatorial.o $(OBJS_GA) $(LIBS)
+	
+combinatorial15.o:
+	$(CXX) -DCOSTS_FILE=\"tai15.dat\" -c combinatorial.cpp
+combinatorial15: combinatorial15.o $(OBJS_GA)
+	$(CXX) -o combinatorial15 combinatorial.o $(OBJS_GA) $(LIBS)
+	
+combinatorial30.o:
+	$(CXX) -DCOSTS_FILE=\"tai30.dat\" -c combinatorial.cpp
+combinatorial30: combinatorial30.o $(OBJS_GA)
+	$(CXX) -o combinatorial30 combinatorial.o $(OBJS_GA) $(LIBS)
+
+real-f1.o:
+	$(CXX) -DF1 -c real.cpp
+real-f1: real-f1.o $(OBJS_GA)
+	$(CXX) -o real-f1 real.o $(OBJS_GA) $(LIBS)
+	
+real-f2.o:
+	$(CXX) -DF2 -c real.cpp
+real-f2: real-f2.o $(OBJS_GA)
+	$(CXX) -o real-f2 real.o $(OBJS_GA) $(LIBS)
+	
+real-f3.o:
+	$(CXX) -DF3 -c real.cpp
+real-f3: real-f3.o $(OBJS_GA)
+	$(CXX) -o real-f3 real.o $(OBJS_GA) $(LIBS)
+
+parsimony.o:
+	$(CXX) -c parsimony.cpp
+parsimony: parsimony.o $(OBJS_GA)
+	$(CXX) -o parsimony parsimony.o $(OBJS_GA) $(LIBS)
+
+calc-parsimony.o:
+	$(CXX) -c -DVERIFY parsimony.cpp
+calc-parsimony: calc-parsimony.o $(OBJS_GA)
+	$(CXX) -o calc-parsimony parsimony.o $(OBJS_GA) $(LIBS)
+
+motiffindingbb.o:
+	$(CXX) -DBB -c motiffinding.cpp
+motiffindingbb: motiffindingbb.o $(OBJS_GA)
+	$(CXX) -o motiffindingbb motiffinding.o $(OBJS_GA) $(LIBS)
+	
+motiffindingga.o:
+	$(CXX) -DGA -DNO_STATS -c motiffinding.cpp
+motiffindingga: motiffindingga.o $(OBJS_GA)
+	$(CXX) -o motiffindingga motiffinding.o $(OBJS_GA) $(LIBS)
+
+all:	clean motiffindingbb motiffindingga
+
+clean:
+	rm -f *.o motiffindingbb motiffindingga

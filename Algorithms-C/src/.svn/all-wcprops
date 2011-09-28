@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/6/trunk/Algorithms-C/src
+END
+cocktail.out
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6/trunk/Algorithms-C/src/cocktail.out
+END
+disjointset.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/6/trunk/Algorithms-C/src/disjointset.c
+END
+cocktailsort
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6/trunk/Algorithms-C/src/cocktailsort
+END
+cocktailsort.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/6/trunk/Algorithms-C/src/cocktailsort.c
+END
+disjointset.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/6/trunk/Algorithms-C/src/disjointset.h
+END
+heapsort
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/6/trunk/Algorithms-C/src/heapsort
+END
+heapsort.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/6/trunk/Algorithms-C/src/heapsort.c
+END
+heapsort.out
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6/trunk/Algorithms-C/src/heapsort.out
+END
+kruskal.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/6/trunk/Algorithms-C/src/kruskal.c
+END

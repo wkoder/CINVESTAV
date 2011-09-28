@@ -1,0 +1,8 @@
+
+**** Build of configuration Default for project ScientificComputationNotes ****
+
+make all 
+rm -f *.o notes
+g++ -g -Wall -c notes.c -fopenmp
+g++ -g -Wall -c notes_test.c -fopenmp
+g++ -g -Wall -o notes_test notes.o notes_test.o -fopenmp

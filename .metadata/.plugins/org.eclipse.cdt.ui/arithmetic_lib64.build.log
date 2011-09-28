@@ -1,0 +1,14 @@
+
+**** Build of configuration Debug for project arithmetic_lib64 ****
+
+make all 
+Building file: ../arithlib64.c
+Invoking: GCC C Compiler
+gcc -O2 -g3 -Wall -c -fmessage-length=0 -finline-functions -mmmx  -msse2 -mssse3 -msse4 -march=core2 -MMD -MP -MF"arithlib64.d" -MT"arithlib64.d" -o"arithlib64.o" "../arithlib64.c"
+Finished building: ../arithlib64.c
+ 
+Building target: arithmetic_lib64
+Invoking: GCC C Linker
+gcc  -o"arithmetic_lib64"  ./arithlib64.o ./testarithlib64.o ./utils.o   
+Finished building target: arithmetic_lib64
+ 

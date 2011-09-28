@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza
+END
+KozaNodeSelector.class
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaNodeSelector.class
+END
+KozaBuilder.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaBuilder.class
+END
+CrossoverPipeline.class
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/CrossoverPipeline.class
+END
+KozaShortStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaShortStatistics.java
+END
+KozaFitness.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaFitness.java
+END
+KozaStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaStatistics.class
+END
+HalfBuilder.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/HalfBuilder.class
+END
+koza.params
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/koza.params
+END
+GPKozaDefaults.class
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/GPKozaDefaults.class
+END
+GrowBuilder.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/GrowBuilder.class
+END
+FullBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/FullBuilder.java
+END
+MutationPipeline.class
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/MutationPipeline.class
+END
+KozaBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaBuilder.java
+END
+CrossoverPipeline.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/CrossoverPipeline.java
+END
+KozaNodeSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaNodeSelector.java
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/README
+END
+KozaStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaStatistics.java
+END
+HalfBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/HalfBuilder.java
+END
+GPKozaDefaults.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/GPKozaDefaults.java
+END
+KozaShortStatistics.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaShortStatistics.class
+END
+KozaFitness.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/KozaFitness.class
+END
+GrowBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/GrowBuilder.java
+END
+MutationPipeline.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/MutationPipeline.java
+END
+FullBuilder.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/gp/koza/FullBuilder.class
+END

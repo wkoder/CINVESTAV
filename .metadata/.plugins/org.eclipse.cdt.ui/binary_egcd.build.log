@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project binary_egcd ****
+
+make all 
+Building file: ../src/binary_egcd.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_egcd.d" -MT"src/binary_egcd.d" -o"src/binary_egcd.o" "../src/binary_egcd.c"
+../src/binary_egcd.c: In function ‘getTime’:
+../src/binary_egcd.c:19: warning: implicit declaration of function ‘gettimeofday’
+Finished building: ../src/binary_egcd.c
+ 
+Building target: binary_egcd
+Invoking: GCC C Linker
+gcc -lgmp -o"binary_egcd"  ./src/binary_egcd.o   
+Finished building target: binary_egcd
+ 

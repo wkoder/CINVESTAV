@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate
+END
+SteadyStateEvolutionState.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateEvolutionState.java
+END
+SteadyStateEvaluator.class
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateEvaluator.class
+END
+SteadyStateBSourceForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateBSourceForm.java
+END
+SteadyStateExchangerForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateExchangerForm.java
+END
+SteadyStateDefaults.class
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateDefaults.class
+END
+SteadyStateBreeder.class
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateBreeder.class
+END
+SteadyStateEvaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateEvaluator.java
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/README
+END
+SteadyStateStatisticsForm.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateStatisticsForm.class
+END
+QueueIndividual.class
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/QueueIndividual.class
+END
+SteadyStateDefaults.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateDefaults.java
+END
+SteadyStateBreeder.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateBreeder.java
+END
+SteadyStateEvolutionState.class
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateEvolutionState.class
+END
+SteadyStateBSourceForm.class
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateBSourceForm.class
+END
+SteadyStateExchangerForm.class
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateExchangerForm.class
+END
+SteadyStateStatisticsForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/SteadyStateStatisticsForm.java
+END
+steadystate.params
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/steadystate.params
+END
+QueueIndividual.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/GoSimulator/src/ec/steadystate/QueueIndividual.java
+END

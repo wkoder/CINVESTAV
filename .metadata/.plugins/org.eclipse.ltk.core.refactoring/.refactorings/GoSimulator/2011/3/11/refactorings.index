@@ -1,0 +1,7 @@
+1299745533937	Rename field 'regions'
+1299745541461	Rename field 'regionLength'
+1299745548370	Rename local variable 'region'
+1299747528597	Rename field 'liberties'
+1299751613638	Rename method 'territoryUtility'
+1299751625129	Rename method 'ofensiveUtility'
+1299751635882	Rename method 'defensiveUtility'

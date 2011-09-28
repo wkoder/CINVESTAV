@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/57/trunk/ComputoCientifico
+END
+givens.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/60/trunk/ComputoCientifico/givens.h
+END
+problem.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/60/trunk/ComputoCientifico/problem.c
+END
+gram_schmidt.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/58/trunk/ComputoCientifico/gram_schmidt.c
+END
+givens.res
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/62/trunk/ComputoCientifico/givens.res
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/58/trunk/ComputoCientifico/.project
+END
+mainao.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/62/trunk/ComputoCientifico/mainao.c
+END
+matrix.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/62/trunk/ComputoCientifico/matrix.c
+END
+problem.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/62/trunk/ComputoCientifico/problem.h
+END
+gram_schmidt.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/58/trunk/ComputoCientifico/gram_schmidt.h
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/58/trunk/ComputoCientifico/.cproject
+END
+matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/62/trunk/ComputoCientifico/matrix.h
+END
+maings.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/59/trunk/ComputoCientifico/maings.c
+END
+lu.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/61/trunk/ComputoCientifico/lu.c
+END
+simplecenterdiff.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/62/trunk/ComputoCientifico/simplecenterdiff.c
+END
+mainlu.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/59/trunk/ComputoCientifico/mainlu.c
+END
+lu.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/60/trunk/ComputoCientifico/lu.h
+END
+simplecenterdiff.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/60/trunk/ComputoCientifico/simplecenterdiff.h
+END
+givens.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/62/trunk/ComputoCientifico/givens.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/60/trunk/ComputoCientifico/Makefile
+END

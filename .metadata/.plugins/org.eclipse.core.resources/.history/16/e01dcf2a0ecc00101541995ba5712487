@@ -1,0 +1,33 @@
+/*
+ * de.cpp
+ *
+ *  Created on: Aug 21, 2011
+ *      Author: Moises Osorio
+ */
+
+#include <stdlib.h>
+
+#include "differentialevolution.h"
+
+int main(int argc, char **argv) {
+	DifferentialEvolution de;
+	double mutationRate, crossoverProbability, randomSeed;
+	int maxGenerations, populationSize;
+
+	printf("Population size: ");
+	scanf("%d", &populationSize);
+	printf("Maximum number of generations: ");
+	scanf("%d", &maxGenerations);
+	printf("Differential variation (0..2): ");
+	scanf("%lf", &mutationRate);
+	printf("Crossover probability (0..1): ");
+	scanf("%lf", &crossoverProbability);
+	printf("Random seed: ");
+	scanf("%lf", &randomSeed);
+	
+	double Fxs = de.solve(xs, maxGenerations, populationSize, crossover, mutation, n, F);
+	printf("xs* = %s\n");
+	printf("F(xs) = %.6f\n");
+	
+	return EXIT_SUCCESS;
+}
